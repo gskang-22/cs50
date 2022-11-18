@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 bool only_digits(string);
 char rotate(char, int);
@@ -18,7 +19,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int k = (int)(argv[1]);
+    int k = atoi(argv[1]);
     string s = get_string("plaintext: ");
     int len = strlen(s);
 
