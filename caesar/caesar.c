@@ -30,7 +30,7 @@ int main(int argc, string argv[])
         printf("%c", c);
     }
     printf("\n");
-    printf("%s", k);
+    printf("%s", s);
 }
 
 bool only_digits(string string1)
