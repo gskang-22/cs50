@@ -35,11 +35,7 @@ int main(int argc, string argv[])
 bool only_digits(string string1)
 {
     int len = strlen(string1);
-    if (len > 1)
-    {
-        return false;
-    }
-    else if (!(isdigit(string1[0])))
+    if (!(isdigit(string1[0])))
     {
         return false;
     }
