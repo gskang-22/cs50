@@ -62,7 +62,7 @@ char rotate(char char1, int int1)
     }
     else
     {
-        char1 = ((char1 - 'a' + 3)%26) + 'a';
+        char1 = ((char1 - 'a' + int1)%26) + 'a';
         return char1;
     }
 }
