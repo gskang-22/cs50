@@ -36,12 +36,18 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    string words = tolower(word);
     int len = strlen(word);
     int score = 0;
     for (int i = 0; i < len; i++)
     {
-        score += (POINTS[words[i] - 'a']);
+        if (isupper(word[i]))
+        {
+            score += (POINTS[word[i] - 'A']);
+        }
+        else if (islower(words[i]))
+        {
+            score += (POINTS[word[i] - 'a']);
+        }
         return score;
     }
 }
