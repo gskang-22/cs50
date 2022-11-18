@@ -13,10 +13,14 @@ int main(void)
 
     for (int i = 0; i < n; i++)
     {
-      for (int j = 0; j <= i; j++)
+        for (int j = 0; (j <= ab(i - 8); j++)
+      {
+          printf(".");
+      }
+        for (int j = 0; j <= i; j++)
       {
           printf("#");
       }
-      printf("\n");
+        printf("\n");
   }
 }
