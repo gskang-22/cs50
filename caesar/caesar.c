@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 bool only_digits(string);
+char rotate(char, int);
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -19,16 +20,18 @@ int main(int argc, string argv[])
     else if (argc == 2)
     {
         return 0;
+        string s = get_string("plaintext: ");
     }
 
     int k = (int)(argv[1][0]);
-    string s = get_string("plaintext: ");
     int len = strlen(s);
 
-    for (int i = 0, i < len; i++)
+    for (int i = 0; i < len; i++)
     {
-        rotate s[i];
+        rotate(s[i], k);
     }
+
+    printf("ciphertext: %s", s);
 }
 
 bool only_digits(string string1)
