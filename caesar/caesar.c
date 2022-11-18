@@ -24,7 +24,7 @@ bool only_digits(string string1)
     {
         return false;
     }
-    else if (!(isdigit(string1)))
+    else if (!(isdigit(string1[0])))
     {
         return false;
     }
