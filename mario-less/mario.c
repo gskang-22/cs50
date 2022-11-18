@@ -8,5 +8,5 @@ int main(void)
     {
         n = get_int("Height: ");
     } while (n < 1 || n > 8);
-    printf("Stored: ")
+    printf("Stored: %i\n", n);
 }
