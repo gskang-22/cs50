@@ -22,12 +22,13 @@ int main(int argc, string argv[])
     string s = get_string("plaintext: ");
     int len = strlen(s);
 
+    printf("ciphertext: ");
     for (int i = 0; i < len; i++)
     {
-        rotate(s[i], k);
+        char c = rotate(s[i], k);
+        printf("%c", c);
     }
-
-    printf("ciphertext: %s\n", s);
+    printf("\n");
 }
 
 bool only_digits(string string1)
