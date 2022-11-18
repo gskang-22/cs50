@@ -4,6 +4,7 @@
 int main(void)
 {
     int n;
+    int counter = 0;
     do
     {
         n = get_int("Height: ");
