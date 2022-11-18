@@ -11,8 +11,6 @@ int main(void)
     }
     while (n < 1 || n > 8);
 
-    printf("Stored: %i\n", n);
-
     for (int i = 0; i < n; i++)
     {
         for (int j = 1; j < (n - i); j++)
