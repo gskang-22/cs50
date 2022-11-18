@@ -39,3 +39,8 @@ bool only_digits(string string1)
         return true;
     }
 }
+
+char rotate(char char1, int int1)
+{
+    
+}
