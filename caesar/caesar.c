@@ -35,14 +35,14 @@ int main(int argc, string argv[])
 bool only_digits(string string1)
 {
     int len = strlen(string1);
-    if (!(isdigit(string1[0])))
+    for (int i = 0; i < len; i++)
     {
-        return false;
+        if (!(isdigit(string1[i])))
+        {
+            return false;
+        }
     }
-    else
-    {
-        return true;
-    }
+    return true;
 }
 
 char rotate(char char1, int int1)
