@@ -20,8 +20,14 @@ int main(int argc, string argv[])
     {
         return 0;
     }
+
     int k = (int)(argv[1][0]);
     string s = get_string("plaintext: ");
+
+    for (c in s)
+    {
+        
+    }
 }
 
 bool only_digits(string string1)
@@ -43,5 +49,18 @@ bool only_digits(string string1)
 
 char rotate(char char1, int int1)
 {
-    
+    if (isalpha(char1) == 0)
+    {
+        return char1;
+    }
+    else if (isupper(char1))
+    {
+        char1 = (char1 - 'A' + int1)%26;
+        return char1;
+    }
+    else
+    {
+        char1 = (char1 - 'a' + int1)%26;
+        return char1;
+    }
 }
