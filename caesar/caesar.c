@@ -30,7 +30,6 @@ int main(int argc, string argv[])
         printf("%c", c);
     }
     printf("\n");
-    printf("%c", rotate('a', 2));
 }
 
 bool only_digits(string string1)
