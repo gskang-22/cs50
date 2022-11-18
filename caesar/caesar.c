@@ -23,10 +23,11 @@ int main(int argc, string argv[])
 
     int k = (int)(argv[1][0]);
     string s = get_string("plaintext: ");
+    int len = strlen(s);
 
-    for (c in s)
+    for (int i = 0, i < len; i++)
     {
-        
+        rotate s[i];
     }
 }
 
