@@ -8,19 +8,23 @@ int main(void)
     do
     {
         n = get_int("Height: ");
-    } while (n < 1 || n > 8);
+    }
+    while (n < 1 || n > 8);
+
     printf("Stored: %i\n", n);
 
     for (int i = 0; i < n; i++)
     {
         for (int j = 1; j < (n - i); j++)
-      {
-          printf(" ");
-      }
+        {
+            printf(" ");
+        }
+
         for (int j = 0; j <= i; j++)
-      {
-          printf("#");
-      }
+        {
+            printf("#");
+        }
+
         printf("\n");
-  }
+    }
 }
