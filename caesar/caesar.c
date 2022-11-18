@@ -17,13 +17,9 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    else if (argc == 2)
-    {
-        return 0;
-        string s = get_string("plaintext: ");
-    }
 
     int k = (int)(argv[1][0]);
+    string s = get_string("plaintext: ");
     int len = strlen(s);
 
     for (int i = 0; i < len; i++)
@@ -31,7 +27,7 @@ int main(int argc, string argv[])
         rotate(s[i], k);
     }
 
-    printf("ciphertext: %s", s);
+    printf("ciphertext: %s\n", s);
 }
 
 bool only_digits(string string1)
