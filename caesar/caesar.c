@@ -28,9 +28,9 @@ int main(int argc, string argv[])
     {
         char c = rotate(s[i], k);
         printf("%c", c);
-        printf("a");
     }
     printf("\n");
+    printf("%c", rotate('a', 2));
 }
 
 bool only_digits(string string1)
