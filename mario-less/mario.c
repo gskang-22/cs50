@@ -9,6 +9,6 @@ int main(void)
     }
     while
     {
-        
+        n < 1 OR n > 8;
     }
 }
