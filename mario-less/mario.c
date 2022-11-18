@@ -13,9 +13,9 @@ int main(void)
 
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j <= (8 - i); j++)
+        for (int j = 0; j < (7 - i); j++)
       {
-          printf(".");
+          printf(" ");
       }
         for (int j = 0; j <= i; j++)
       {
