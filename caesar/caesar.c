@@ -50,7 +50,7 @@ bool only_digits(string string1)
 
 char rotate(char char1, int int1)
 {
-    if (isalpha(char1) == 0)
+    if (isalpha(char1))
     {
         return char1;
     }
