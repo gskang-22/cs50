@@ -21,6 +21,7 @@ int main(int argc, string argv[])
         return 0;
     }
     int k = (int)(argv[1][0]);
+    string s = get_string("plaintext: ");
 }
 
 bool only_digits(string string1)
