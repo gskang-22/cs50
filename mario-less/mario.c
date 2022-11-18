@@ -4,4 +4,11 @@
 int main(void)
 {
     do
+    {
+        int n = get_int("Height: ");
+    }
+    while
+    {
+        
+    }
 }
