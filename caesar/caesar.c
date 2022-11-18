@@ -53,12 +53,12 @@ char rotate(char char1, int int1)
     }
     else if (isupper(char1))
     {
-        char1 = ((char1 - 'A' + int1)%26) + 'A';
+        char1 = ((char1 - 'A' + int1) % 26) + 'A';
         return char1;
     }
     else
     {
-        char1 = ((char1 - 'a' + int1)%26) + 'a';
+        char1 = ((char1 - 'a' + int1) % 26) + 'a';
         return char1;
     }
 }
