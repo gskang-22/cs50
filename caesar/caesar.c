@@ -18,7 +18,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int k = (int)(argv[1][0]);
+    int k = (int)(argv[1]);
     string s = get_string("plaintext: ");
     int len = strlen(s);
 
