@@ -4,7 +4,7 @@ How do you know?:
 
 sort2 uses: merge sort
 
-How do you know?: TODO
+How do you know?: sort2 takes the shortest time to sort the .txt file, and thus uses merge sort which has the smallest order of O(n log n).
 
 sort3 uses: selection sort
 
