@@ -40,30 +40,30 @@ int get_cents(void)
     do
     {
         int cents = get_int("Change owed: ");
-    } while (cents );
-    return cents;
+    } while (cents < 0);
+    return 0;
 }
 
 int calculate_quarters(int cents)
 {
-    // TODO
-    return 0;
+    int q = cents % 25;
+    return q;
 }
 
 int calculate_dimes(int cents)
 {
-    // TODO
-    return 0;
+    int d = cents % 10;
+    return d;
 }
 
 int calculate_nickels(int cents)
 {
-    // TODO
-    return 0;
+    int n = cents % 5;
+    return n;
 }
 
 int calculate_pennies(int cents)
 {
-    // TODO
+    int p = cents % 1
     return 0;
 }
