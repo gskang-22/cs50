@@ -159,7 +159,13 @@ void tabulate(void)
 bool print_winner(void)
 {
     int max = 0;
-    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > max)
+        {
+            max = candidate[i].votes;
+        }
+    }
     return false;
 }
 
