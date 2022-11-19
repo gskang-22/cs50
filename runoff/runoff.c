@@ -131,7 +131,7 @@ bool vote(int voter, int rank, string name)
     {
         if (name == candidates[i].name)
         {
-            preference[voter][rank] = i;
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -159,18 +159,24 @@ void tabulate(void)
 bool print_winner(void)
 {
     int max = 0;
+    int index2;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > max)
         {
-            max = candidate[i].votes;
+            max = candidates[i].votes;
+            index2 = i;
         }
     }
     if (voter_count/2.0 < max)
     {
-        
+        printf("%s", candidates[index2].name);
+        return true;
     }
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
 // Return the minimum number of votes any remaining candidate has
