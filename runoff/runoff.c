@@ -160,7 +160,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     int max = 0;
-    int index2;
+    int index2 = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > max)
@@ -169,7 +169,7 @@ bool print_winner(void)
             index2 = i;
         }
     }
-    if (max > voter_count/2.0))
+    if (max > (voter_count/2.0))
     {
         printf("%s", candidates[index2].name);
         return true;
