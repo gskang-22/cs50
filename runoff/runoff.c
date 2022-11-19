@@ -131,7 +131,7 @@ bool vote(int voter, int rank, string name)
     {
         if (name == candidates[i].name)
         {
-            preference[voter][rank] = name;
+            preference[voter][rank] = i;
             return true;
         }
     }
@@ -145,24 +145,21 @@ void tabulate(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            string n = preference[i][j];
-            for (int k = 0; k < candidate_count; k++)
+            int index = preference[i][j];
+            if (!candidates[index].eliminated)
             {
-                if ((n == candidates[k].name) && (!candidates[k].eliminated))
-                {
-                    candidates[k].votes++;
-                    break;
-                }
+                candidates[index].votes++;
+                break;
             }
         }
     }
-    return;
 }
 
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // TODO
+    int max = 0;
+    
     return false;
 }
 
