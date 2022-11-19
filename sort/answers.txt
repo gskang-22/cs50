@@ -1,6 +1,6 @@
 sort1 uses: bubble sort
 
-How do you know?: 
+How do you know?: sort1 takes a longer time to sort random10000.txt than sorted10000.txt, which means its big 
 
 sort2 uses: merge sort
 
@@ -8,4 +8,4 @@ How do you know?: sort2 takes the shortest time to sort the .txt file, and thus 
 
 sort3 uses: selection sort
 
-How do you know?: TODO
+How do you know?: Time taken to sort random10000.txt and sorted10000.txt are roughly similar, which means sort3 uses selection sort which has the same upper and lower bound.
