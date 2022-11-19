@@ -163,7 +163,7 @@ bool print_winner(void)
     int index2;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > max)
+        if ((float)candidates[i].votes > max)
         {
             max = candidates[i].votes;
             index2 = i;
