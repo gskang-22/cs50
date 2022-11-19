@@ -86,4 +86,5 @@ void print_winner(void)
         int temp = candidates[i].votes;
         max = max(temp, max);
     }
+    
 }
