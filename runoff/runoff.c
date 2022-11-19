@@ -171,7 +171,7 @@ bool print_winner(void)
     }
     if (max > (voter_count/2.0))
     {
-        printf("%s", candidates[index2].name);
+        printf("%s\n", candidates[index2].name);
         return true;
     }
     else
