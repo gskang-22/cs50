@@ -151,6 +151,7 @@ void tabulate(void)
                 if ((n == candidates[k].name) && (!candidates[k].eliminated))
                 {
                     candidates[k].votes++;
+                    break;
                 }
             }
         }
