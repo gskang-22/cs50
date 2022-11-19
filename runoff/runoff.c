@@ -166,7 +166,10 @@ bool print_winner(void)
             max = candidate[i].votes;
         }
     }
-    if (voter_count/2)
+    if (voter_count/2.0 < max)
+    {
+        
+    }
     return false;
 }
 
