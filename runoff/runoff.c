@@ -169,6 +169,7 @@ bool print_winner(void)
             index2 = i;
         }
     }
+    //possible to combine into 1 statement: no need for max since only can have 1 winner w majority
     if (max > (voter_count / 2.0))
     {
         printf("%s\n", candidates[index2].name);
