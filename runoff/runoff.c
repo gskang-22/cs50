@@ -166,6 +166,7 @@ bool print_winner(void)
             max = candidate[i].votes;
         }
     }
+    if ()
     return false;
 }
 
