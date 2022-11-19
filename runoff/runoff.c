@@ -169,7 +169,7 @@ bool print_winner(void)
             index2 = i;
         }
     }
-    if (voter_count/2.0 < max)
+    if (max > (voter_count/2.0))
     {
         printf("%s", candidates[index2].name);
         return true;
