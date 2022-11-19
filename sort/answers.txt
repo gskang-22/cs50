@@ -1,6 +1,6 @@
-sort1 uses: TODO
+sort1 uses: selection sort
 
-How do you know?: TODO
+How do you know?: It takes the longest time to sort reversed10000.txt
 
 sort2 uses: TODO
 
