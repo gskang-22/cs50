@@ -131,7 +131,7 @@ bool vote(int voter, int rank, string name)
     {
         if (name == candidates[i].name)
         {
-            candidates[i].votes++;
+            preference[voter][rank] = 
             return true;
         }
     }
@@ -141,7 +141,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    
+
     return;
 }
 
