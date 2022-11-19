@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stlib.h>
 
 // Max number of candidates
 #define MAX 9
@@ -86,5 +87,11 @@ void print_winner(void)
         int temp = candidates[i].votes;
         max = max(temp, max);
     }
-    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (max == candidates[i].votes)
+        {
+            printf("%s", candidates[i].name);
+        }
+    }
 }
