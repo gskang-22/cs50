@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-#include <stlib.h>
+#include <stdlib.h>
 
 // Max number of candidates
 #define MAX 9
@@ -81,15 +81,15 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    int max = 0;
+    int mx = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         int temp = candidates[i].votes;
-        max = max(temp, max);
+        mx = max(temp, mx);
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        if (max == candidates[i].votes)
+        if (mx == candidates[i].votes)
         {
             printf("%s", candidates[i].name);
         }
