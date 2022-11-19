@@ -68,7 +68,7 @@ bool vote(string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcpy(candidates[i].name, name)
+        if (strcpy(candidates[i].name, name))
         {
             candidates[i].votes += 1;
             return true;
