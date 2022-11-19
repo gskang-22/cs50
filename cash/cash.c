@@ -37,9 +37,10 @@ int main(void)
 
 int get_cents(void)
 {
+    int c;
     do
     {
-        int c = get_int("Change owed: ");
+        c = get_int("Change owed: ");
     } while (c < 0);
     return c;
 }
@@ -64,6 +65,6 @@ int calculate_nickels(int cents)
 
 int calculate_pennies(int cents)
 {
-    int p = cents / 1
+    int p = cents / 1;
     return p;
 }
