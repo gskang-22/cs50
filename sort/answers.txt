@@ -1,6 +1,6 @@
-sort1 uses: selection sort
+sort1 uses: 
 
-How do you know?: A selection sort selects the smallest element each time, and thus sorting a reversed list would be its worst case scenario with order O(n**2). Sort1 takes the longest time to sort reversed10000.txt.
+How do you know?:
 
 sort2 uses: TODO
 
