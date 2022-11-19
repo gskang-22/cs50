@@ -190,13 +190,19 @@ int find_min(void)
             min = candidates[i].votes;
         }
     }
-    return 0;
+    return min;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if ((candidates[i].votes == min) && (!candidates[i].eliminated))
+        {
+            
+        }
+    }
     return false;
 }
 
