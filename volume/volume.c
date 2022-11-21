@@ -36,10 +36,17 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     uint8_t header[HEADER_SIZE];
     fread(&header, HEADER_SIZE, 1, input);
+    //since header is a pointer to the first member in the array
     fwrite(&header, HEADER_SIZE, 1, output);
 
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer;
+    while (fread(&buffer, sizeof(int16_t), 1, input))
+    //fread returns the number of items of data successfully read
+    {
+        buffer *= factor;
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
 
     // Close files
     fclose(input);
