@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <string.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -66,9 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j= 0; j < (width / 2); j++)
         {
             RGBTRIPLE temp;
-            temp = image[i][j];
-            image[i][j] = image[i][width - j];
-            image[i][width - j] = temp;
+            memcpy(&image[i][j], &temp, sizeof(temp));
         }
     }
 }
