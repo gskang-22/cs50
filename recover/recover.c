@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int BLOCKSIZE = 512;
+typedef uint8_t BYTE;
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -16,7 +18,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    while (fread(###.jpg, 512, (sizeof(F)/512), F);
+    while (fread(buffer, 512, (sizeof(F)/512), F) == BLOCK_SIZE);
+    {
+        
+    }
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
 
