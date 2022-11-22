@@ -77,14 +77,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp[height][width];
-    for (int i = 1, i < height - 1; i++)
+    float counter = 0.0;
+    for (int i = 0, i < height; i++)
     {
-        for (int j = 1; j < width - 1; j++)
+        for (int j = 0; j < width; j++)
         {
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
                 {
+                    if ()
                     int totalr += image[i + k][j + l].rgbtRed;
                     int totalg += image[i + k][j + l].rgbtGreen;
                     int totalb += image[i + k][j + l].rgbtBlue;
