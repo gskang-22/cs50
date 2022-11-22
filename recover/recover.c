@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
         prinf("Could not open %s.\n", argv[1]);
         return 1;
     }
-    
-    fread(###.jpg, 512, (sizeof(F)/512), F);
+
+    while (fread(###.jpg, 512, (sizeof(F)/512), F);
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
 
