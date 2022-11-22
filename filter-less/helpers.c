@@ -99,6 +99,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     for (int i = 0, i < height; i++)
     {
-        
+        temp[0][i].rgbtRed = (int)round( / 9.0);
+        temp[0][i].rgbtGreen = (int)round(totalg / 9.0);
+        temp[0][i].rgbtBlue = (int)round(totalb / 9.0);
     }
 }
