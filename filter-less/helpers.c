@@ -67,7 +67,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j= 0; j < (width / 2); j++)
         {
             RGBTRIPLE temp;
-            memcpy(&image[i][j], &temp, sizeof(temp));
+            memcpy(&temp, &image[i][j], sizeof(temp));
+            memcpy(&image[i][j], &image[i][width - j], sizeof(temp));
+            memcpy(&image[i][width - j], &temp, sizeof(temp));
         }
     }
 }
@@ -88,7 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = -1; l < 2; l++)
                 {
-                    if (((i + k) > 0) && ((j + l) > 0))
+                    if (((i + k) >= 0) && ((j + l) >= 0))
                         {
                             totalr += image[i + k][j + l].rgbtRed;
                             totalg += image[i + k][j + l].rgbtGreen;
