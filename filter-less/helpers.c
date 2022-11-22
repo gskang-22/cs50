@@ -67,9 +67,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < (width / 2); j++)
         {
             RGBTRIPLE temp;
-            memcpy(&temp, &image[i][j], sizeof(temp));
-            memcpy(&image[i][j], &image[i][width - j], sizeof(temp));
-            memcpy(&image[i][width - j], &temp, sizeof(temp));
+            temp = image[i][j];
+            image[i][j] = image[i][width - j - 1];
+            image[i][width - j - 1] = temp;
         }
     }
 }
