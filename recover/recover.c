@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
         prinf("Could not open %s.\n", argv[1]);
         return 1;
     }
-    uint8_t buffer;
+    uint8_t buffer[BLOCK_SIZE];
     while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
     {
          if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            
+
         }
     }
 
