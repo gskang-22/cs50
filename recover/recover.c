@@ -17,15 +17,15 @@ int main(int argc, char *argv[])
         prinf("Could not open %s.\n", argv[1]);
         return 1;
     }
-
-    while (fread(buffer, 512, (sizeof(F)/512), F) == BLOCK_SIZE);
+    uint8_t buffer;
+    while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
     {
-        
+         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            
+        }
     }
-    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-    {
 
-    }
     sprint(filename, "%03i.jpg", count);
     FILE *img = fopen(filename, "w");
 }
