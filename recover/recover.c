@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
         print
     }
     file *F = fopen(card.raw, "r");
-    
+    fread(###.jpg, 512, (sizeof(F)/512), F);
 }
