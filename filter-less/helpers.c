@@ -7,7 +7,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int x = (image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0;
+            int x = (int)(image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0;
+
             image[i][j].rgbtRed = x;
             image[i][j].rgbtGreen = x;
             image[i][j].rgbtBlue = x;
@@ -19,6 +20,18 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int x = image[i][j].rgbtRed;
+            int y = image[i][j].rgbtGreen;
+            int z = image[i][j].rgbtBlue;
+            image[i][j].rgbtRed = (int)(0.393 * x + 0.769 * y + 0.189 * z);
+            image[i][j].rgbtGreen = (int)(0.349 * x + 0.686 * y + 0.168 * z);
+            image[i][j].rgbtBlue = (int)(0.272 * x + 0.534 * y + 0.131 * z);
+        }
+    }
     return;
 }
 
