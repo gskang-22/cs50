@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         prinf("Could not open %s.\n", argv[1]);
         return 1;
     }
-    uint8_t buffer[BLOCK_SIZE];
+    uint8_t buffer[BLOCK_SIZE] = malloc();
     int count = 0;
     while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
     {
