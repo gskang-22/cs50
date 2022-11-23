@@ -18,11 +18,12 @@ int main(int argc, char *argv[])
         return 1;
     }
     uint8_t buffer[BLOCK_SIZE];
+    int count = 0;
     while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
     {
          fread(buffer, 1, BLOCK_SIZE, F);
          // if jpg file
-         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0 && count == 0)
         {
             fopen();
             fwrite();
