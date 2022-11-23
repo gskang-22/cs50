@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include 
+#include <stdint.h>
 
-int BLOCKSIZE = 512;
+int BLOCK_SIZE = 512;
 typedef uint8_t BYTE;
 int main(int argc, char *argv[])
 {
@@ -15,13 +15,14 @@ int main(int argc, char *argv[])
     FILE *F = fopen(argv[1], "r");
     if (F == NULL)
     {
-        prinf("Could not open %s.\n", argv[1]);
+        printf("Could not open %s.\n", argv[1]);
         return 1;
     }
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
     char filename[8];
-    while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
+    FILE *img = NULL;
+    while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE)
     {
          fread(buffer, 1, BLOCK_SIZE, F);
          // if jpg file
@@ -31,8 +32,8 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
             }
-            sprint(filename, "%03i.jpg", count);
-            FILE *img = fopen(filename, "w");
+            sprintf(filename, "%03i.jpg", count);
+            img = fopen(filename, "w");
             fwrite(buffer, BLOCK_SIZE, 1, img);
             count++;
         }
