@@ -89,8 +89,8 @@ void free_family(person *p)
         return NULL;
     }
     // TODO: Free parents recursively
-    person *parent0 = free_family(p->parents[0]);
-    person *parent1 = free_family(p->parents[1]);
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
     // TODO: Free child
     free(p);
     return NULL;
