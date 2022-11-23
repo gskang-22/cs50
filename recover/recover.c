@@ -37,12 +37,9 @@ int main(int argc, char *argv[])
             fwrite(buffer, BLOCK_SIZE, 1, img);
             count++;
         }
-        else
+        else if (!(count == 0))
         {
-            if (!(count == 0))
-            {
-                fwrite(buffer, BLOCK_SIZE, 1, img);
-            }
+            fwrite(buffer, BLOCK_SIZE, 1, img);
         }
     }
     fclose(img);
