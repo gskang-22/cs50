@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include 
 
 int BLOCKSIZE = 512;
 typedef uint8_t BYTE;
@@ -30,20 +31,20 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
             }
-
-            count++;
             sprint(filename, "%03i.jpg", count);
             FILE *img = fopen(filename, "w");
             fwrite(buffer, BLOCK_SIZE, 1, img);
+            count++;
         }
         else
         {
-            if ()
+            if (!(count == 0))
             {
                 fwrite(buffer, BLOCK_SIZE, 1, img);
             }
         }
     }
-
+    fclose(img);
+    fclose(F);
 
 }
