@@ -92,12 +92,13 @@ void free_family(person *p)
     if (!(p->parents == NULL))
     {
         person *parent0 = free_family(p->parents[0]);
-        person *parent1 = free_family(p->parents[0]);
+        person *parent1 = free_family(p->parents[1]);
+        free(p);
     }
     // TODO: Free child
     else
     {
-        free
+        
     }
 }
 
