@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    file *F = fopen(argv[1], "r");
+    FILE *F = fopen(argv[1], "r");
     if (F == NULL)
     {
         prinf("Could not open %s.\n", argv[1]);
