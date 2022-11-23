@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     }
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
+    char filename[8];
     while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE);
     {
          fread(buffer, 1, BLOCK_SIZE, F);
