@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
     int count = 0;
     char filename[8];
     FILE *img = NULL;
+    //also possible to use fread(buffer, BLOCK_SIZE, 1, F)
+    //fread() == BLOCK_SIZE also reads file
     while (fread(buffer, 1, BLOCK_SIZE, F) == BLOCK_SIZE)
     {
         // if jpg file
@@ -36,6 +38,7 @@ int main(int argc, char *argv[])
             fwrite(buffer, BLOCK_SIZE, 1, img);
             count++;
         }
+        //can change else if loop to if loop: then only need 1 fwrite() function
         else if (!(count == 0))
         {
             fwrite(buffer, BLOCK_SIZE, 1, img);
