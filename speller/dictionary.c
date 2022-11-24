@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 50;
+const unsigned int N = 26;
 int strcasecmp(const char *string1, const char *string2);
 
 // Hash table
