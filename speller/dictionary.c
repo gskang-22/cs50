@@ -78,6 +78,7 @@ bool load(const char *dictionary)
         table[idx]->next = n;
         dict_num++;
     }
+    fclose(dict);
     return true;
 }
 
