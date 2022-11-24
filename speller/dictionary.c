@@ -42,7 +42,8 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         int x = hash(dictionary[]);
         strcpy(n->word, dictionary[]);
-        n->next = *table[x]
+        n->next = *table[x]->next;
+        
     }
     return false;
 }
