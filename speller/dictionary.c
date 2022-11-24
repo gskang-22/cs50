@@ -43,7 +43,7 @@ bool load(const char *dictionary)
         int x = hash(dictionary[]);
         strcpy(n->word, dictionary[]);
         n->next = *table[x]->next;
-        
+        *table[x]->next = n;
     }
     return false;
 }
