@@ -99,7 +99,7 @@ bool unload(void)
         node *n = tmp;
         while (true)
         {
-            n = n->next
+            n = n->next;
             free(tmp);
             if (n == NULL)
             {
@@ -107,7 +107,10 @@ bool unload(void)
             }
             tmp = n;
         }
-
+        if (n == NULL && i == N - 1)
+        {
+            return true;
+        }
     }
-    return true;
+    return false;
 }
