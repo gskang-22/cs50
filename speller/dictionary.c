@@ -28,16 +28,16 @@ bool check(const char *word)
 {
     // TODO
     int x = hash(word);
-    
-    while (cursor != NULL)
+    node *n = table[x];
+    while (n != NULL)
     {
-        if (strcmp(tolower(word), *cursor) == 0)
+        if (strcmp(word, n->word) == 0)
         {
             return true;
         }
         else
         {
-            cursor = cursor->next;
+            n = n->next;
         }
     }
     return false;
