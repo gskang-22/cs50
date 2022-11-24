@@ -59,13 +59,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dict = fopen(dictionary, "w");
+    FILE *dict = fopen(dictionary, "r");
     char word1[LENGTH + 1];
     if (dict == NULL)
     {
         printf("Unable to open %s\n", dictionary);
+        return false;
     }
-    while (!(fscanf(dict, "%s", word1) == EOF))
+    while (fscanf(dict, "%s", word1) != EOF)
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
