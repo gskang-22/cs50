@@ -18,6 +18,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 50;
+int strcasecmp(const char *string1, const char *string2);
 
 // Hash table
 node *table[N];
@@ -31,7 +32,7 @@ bool check(const char *word)
     node *n = table[x];
     while (n != NULL)
     {
-        if (strcmp(word, n->word) == 0)
+        if (strcasecmp(word, n->word) == 0)
         {
             return true;
         }
