@@ -27,6 +27,7 @@ int dict_num = 0;
 bool check(const char *word)
 {
     // TODO
+    int x = hash(word);
     
     return false;
 }
