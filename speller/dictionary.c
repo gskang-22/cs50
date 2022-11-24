@@ -105,7 +105,6 @@ bool unload(void)
             {
                 break;
             }
-            tmp = n;
         }
         if (n == NULL && i == N - 1)
         {
