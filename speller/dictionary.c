@@ -31,7 +31,7 @@ bool check(const char *word)
     node *n = table[x];
     while (n != NULL)
     {
-        if (strcmp(tolower(word), n->word) == 0)
+        if (strcasecmp(word, n->word) == 0)
         {
             return true;
         }
