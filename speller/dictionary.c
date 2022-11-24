@@ -58,6 +58,7 @@ bool load(const char *dictionary)
         n->next = table[idx]->next;
         table[idx]->next = n;
     }
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
