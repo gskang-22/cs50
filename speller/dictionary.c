@@ -28,7 +28,11 @@ bool check(const char *word)
 {
     // TODO
     int x = hash(word);
-    
+    string *cursor = table[x]->next;
+    for (cursor != NULL)
+    {
+        
+    }
     return false;
 }
 
