@@ -19,6 +19,7 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
+char *word1[LENGTH + 1];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -43,11 +44,15 @@ bool load(const char *dictionary)
     {
         printf("Unable to open %s\n", *dictionary);
     }
-    for (f)
+    for (!(fscanf(dict, "%s", word1) == EOF))
     {
         node *n = malloc(sizeof(node));
-        int x = hash(dictionary[]);
-        strcpy(n->word, dictionary[]);
+        if (n == NULL)
+        {
+            return false;
+        }
+        int x = hash(word1);
+        strcpy(n->word, word1);
         n->next = *table[x]->next;
         *table[x]->next = n;
     }
