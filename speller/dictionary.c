@@ -29,7 +29,7 @@ bool check(const char *word)
     // TODO
     int x = hash(word);
     char* cursor[LENGTH + 1];
-    cursor = table[x]->word);
+    cursor = table[x]->next;
     while (cursor != NULL)
     {
         if (strcmp(tolower(word), *cursor) == 0)
