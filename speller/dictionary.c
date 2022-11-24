@@ -44,7 +44,7 @@ bool load(const char *dictionary)
     {
         printf("Unable to open %s\n", dictionary);
     }
-    for (!(fscanf(dict, "%s", word1) == EOF))
+    while (!(fscanf(dict, "%s", *word1) == EOF))
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
