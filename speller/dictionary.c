@@ -40,7 +40,9 @@ bool load(const char *dictionary)
     for
     {
         node *n = malloc(sizeof(node));
-        n
+        int x = hash(dictionary[]);
+        strcpy(n->word, dictionary[]);
+        n->next = *table[x]
     }
     return false;
 }
