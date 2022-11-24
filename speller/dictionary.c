@@ -28,10 +28,17 @@ bool check(const char *word)
 {
     // TODO
     int x = hash(word);
-    string *cursor = table[x]->next;
-    for (cursor != NULL)
+    char *cursor = table[x]->next;
+    while (cursor != NULL)
     {
-        
+        if (strcmp(word, cursor) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            cursor = cursor->next;
+        }
     }
     return false;
 }
