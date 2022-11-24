@@ -31,7 +31,7 @@ bool check(const char *word)
     char cursor[LENGTH + 1] = &(table[x]->next->word);
     while (cursor != NULL)
     {
-        if (strcmp(word, *cursor) == 0)
+        if (strcmp(tolower(word), *cursor) == 0)
         {
             return true;
         }
