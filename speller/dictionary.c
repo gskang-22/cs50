@@ -42,7 +42,7 @@ bool load(const char *dictionary)
     FILE *dict = fopen(dictionary, "w");
     if (dict == NULL)
     {
-        printf("Unable to open %s\n", *dictionary);
+        printf("Unable to open %s\n", dictionary);
     }
     for (!(fscanf(dict, "%s", word1) == EOF))
     {
