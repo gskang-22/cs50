@@ -41,9 +41,9 @@ bool load(const char *dictionary)
     FILE *dict = fopen(dictionary, "w");
     if (dict == NULL)
     {
-        
+        printf("Unable to open %s\n", *dictionary);
     }
-    for
+    for (f)
     {
         node *n = malloc(sizeof(node));
         int x = hash(dictionary[]);
