@@ -28,7 +28,7 @@ bool check(const char *word)
 {
     // TODO
     int x = hash(word);
-    char *cursor = table[x]->next;
+    char **cursor = table[x]->next;
     while (cursor != NULL)
     {
         if (strcmp(word, cursor) == 0)
@@ -76,7 +76,7 @@ bool load(const char *dictionary)
         int idx = hash(word1);
         n->next = table[idx]->next;
         table[idx]->next = n;
-        dict_num++
+        dict_num++;
     }
     return true;
 }
