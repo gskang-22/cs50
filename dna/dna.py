@@ -23,10 +23,10 @@ def main():
             number = longest_match(dna, key)
         for i in range(0, len(reader)):
             dna_times = reader[i][key]
-            if number != (int)dna_times:
+            if number != int(dna_times):
                 name_list.remove(reader[i]["name"])
     # TODO: Check database for matching profiles
-    if !(name_list):
+    if not name_list:
         print("No match")
     else:
         print(f"{name_list[0]}")
