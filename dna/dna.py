@@ -17,13 +17,19 @@ def main():
     name_list = []
     for i in range(0,len(reader)):
         name_list.append(reader[i]["name"])
+
     for key in reader[0]:
         if key != "name":
             number = longest_match(dna, key)
-        
+        for i in range(0, len(reader)):
+            dna_times = (int)reader[i][key]
+            if number != dna_times:
+                name_list.remove(reader[i]["name"])
     # TODO: Check database for matching profiles
-
-    return
+    if !(name_list):
+        print("No match")
+    else:
+        print(f"{name_list[0]}")
 
 
 def longest_match(sequence, subsequence):
