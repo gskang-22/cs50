@@ -20,7 +20,7 @@ def main():
     for key in reader[0]:
         if key != "name":
             number = longest_match(dna, key)
-            list.append(number)
+        
     # TODO: Check database for matching profiles
 
     return
