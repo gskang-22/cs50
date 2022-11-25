@@ -12,22 +12,22 @@ def main():
     with open(sys.argv[1]) as file1:
         reader = csv.DictReader(file1)
         name_list = []
+        reader_list = []
         for row in reader:
             name_list.append(row["name"])
+            reader_list.append(row)
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as file2:
         dna = file2.read()
     # TODO: Find longest match of each STR in DNA sequence
 
-
-
-    for key in reader[0]:
+    for key in reader_list[0]:
         if key != "name":
             number = longest_match(dna, key)
-        for i in range(0, len(reader)):
-            dna_times = reader[i][key]
-            if number != int(dna_times):
-                name_list.remove(reader[i]["name"])
+            for i in range(0, len(reader_list)):
+                dna_times = reader_list[i][key]
+                if number != int(dna_times):
+                    name_list.remove(reader_list[i]["name"])
     # TODO: Check database for matching profiles
     if not name_list:
         print("No match")
