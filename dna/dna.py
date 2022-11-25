@@ -16,7 +16,7 @@ def main():
         dna = file2.read()
     # TODO: Find longest match of each STR in DNA sequence
     name_list = []
-    for i in range(0,len(reader)):
+    for row in reader:
         name_list.append(reader[i]["name"])
 
     for key in reader[0]:
