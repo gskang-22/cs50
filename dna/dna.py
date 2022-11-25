@@ -14,7 +14,8 @@ def main():
     with open(sys.argv[2]) as file2:
         dna_list = file2.read()
     # TODO: Find longest match of each STR in DNA sequence
-
+    for i in range(1, )
+    number = longest_match(dna_list, )
     # TODO: Check database for matching profiles
 
     return
