@@ -14,10 +14,11 @@ def main():
     with open(sys.argv[2]) as file2:
         dna_list = file2.read()
     # TODO: Find longest match of each STR in DNA sequence
-    for i in range(1, )
+    list = []
     for key in reader[0]:
         if key != "name":
-            number = longest_match(dna_list, )
+            number = longest_match(dna_list, key)
+            list.append(number)
     # TODO: Check database for matching profiles
 
     return
