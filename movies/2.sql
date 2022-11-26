@@ -1,1 +1,1 @@
-SELECT birth FROM people WHERE name = "Emma Stong";
+SELECT birth FROM people WHERE name = "Emma Stone";
