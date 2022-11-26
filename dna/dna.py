@@ -28,7 +28,7 @@ def main():
                 dna_times = reader_list[i][key]
                 if number != int(dna_times) and (reader_list[i]["name"] in name_list):
                     name_list.remove(reader_list[i]["name"])
-    # alternative is to use count = 0, and add 1 for every match. if count = len()
+    # alternative is to use count = 0, and add 1 for every match. if count = number of STR, match is found
     # TODO: Check database for matching profiles
     if not name_list:
         print("No match")
