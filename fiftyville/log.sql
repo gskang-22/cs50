@@ -10,7 +10,7 @@ SELECT transcript
 FROM interviews
 WHERE year = 2021 AND month = 7 AND day = 28 AND transcript LIKE "%bakery%";
 --witness1
-SELECT people.name, bakery_security_logs.license_plate, bakery_security_logs.activity
+SELECT people.name
 FROM bakery_security_logs
 JOIN people ON bakery_security_logs.license_plate = people.license_plate
 WHERE bakery_security_logs.year = 2021
