@@ -33,7 +33,7 @@ SELECT caller, receiver
 FROM phone_calls
 WHERE year = 2021 AND month = 7 AND day = 28
 AND duration < 60;
---flight
+--flight / City
 SELECT city
 FROM airports
 JOIN flights ON flights.destination_airport_id = airports.id
@@ -42,5 +42,12 @@ AND flights.origin_airport_id =
 (SELECT id FROM airports WHERE city = "Fiftyville")
 ORDER BY hour ASC, minute ASC
 LIMIT 1;
---collate
-SELECT name from 
+--passenger list
+SELECT passengers.name
+FROM passengers
+JOIN flights ON passengers.flight_id = flights.id
+WHERE flights.year = 2021 AND flights.month = 7 AND flights.day = 29
+AND flights.origin_airport_id =
+(SELECT id FROM airports WHERE city = "Fiftyville")
+ORDER BY hour ASC, minute ASC
+LIMIT 1;
