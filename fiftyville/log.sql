@@ -4,6 +4,6 @@
 --
 
 --finding who the thief is
-SELECT id
+SELECT description
 FROM crime_scene_reports
-WHERE month = 7 AND day = 28 AND street = "Chamberlin Street";
+WHERE year = 2021 AND month = 7 AND day = 28 AND street = "Chamberlin Street";
