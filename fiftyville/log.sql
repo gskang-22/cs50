@@ -21,4 +21,14 @@ AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
 AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25);
 
-SELECT 
+SELECT people.name
+FROM people
+JOIN bank_accounts ON bank_accounts.person_id = people.id
+JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
+WHERE atm_transactions.year = 2021
+AND atm_transactions.month = 7
+AND atm_transactions.day = 28
+AND atm_transactions.atm_location = "Leggett Street"
+AND
+AND
+AND
