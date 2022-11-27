@@ -12,10 +12,7 @@ SELECT transcript
 FROM interviews
 WHERE year = 2021 AND month = 7 AND day = 28 AND transcript LIKE "%bakery%";
 
-SELECT license_plate, activity
+SELECT people.name, bakery_security_logs.license_plate, bakery_security_logs.activity
 FROM bakery_security_logs
+JOIN people ON bakery_security_logs.license_plate = people.license_plate
 WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND (minute >= 15 AND minute <= 25);
-
-SELECT person.name, bakery_security_logs.license_plate, bakery_security_logs.activity
-FROM bakery_security_logs
-JOIN person ON bakery_security_logs.
