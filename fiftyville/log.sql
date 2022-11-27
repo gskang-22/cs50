@@ -20,3 +20,5 @@ AND bakery_security_logs.month = 7
 AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
 AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25);
+
+SELECT 
