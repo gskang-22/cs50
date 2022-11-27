@@ -42,3 +42,5 @@ AND flights.origin_airport_id =
 (SELECT id FROM airports WHERE city = "Fiftyville")
 ORDER BY hour ASC, minute ASC
 LIMIT 1;
+--collate
+SELECT name from 
