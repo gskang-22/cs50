@@ -47,7 +47,9 @@ SELECT people.name
 FROM people
 JOIN passengers ON passengers.passport_number = people.passport_number
 JOIN flights ON passengers.flight_id = flights.id
-WHERE flights.year = 2021 AND flights.month = 7 AND flights.day = 29
+WHERE flights.id = (SELECT )
+
+flights.year = 2021 AND flights.month = 7 AND flights.day = 29
 AND flights.origin_airport_id =
 (SELECT id FROM airports WHERE city = "Fiftyville")
 ORDER BY hour ASC, minute ASC
