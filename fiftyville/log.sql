@@ -38,5 +38,6 @@ SELECT city
 FROM airports
 JOIN flights ON flights.destination_airport_id = airports.id
 WHERE flights.year = 2021 AND flights.month = 7 AND flights.day = 29
+AND 
 ORDER BY hour ASC, minute ASC
 LIMIT 1;
