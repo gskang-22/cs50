@@ -8,16 +8,19 @@
 
         <script>
             // TODO: Add code to check answers to questions
-            let correct = document.querySelector('.correct');
-            correct.addEventListener('click', function() {
-                correct.style.backgroundColor = 'green';
-                document.querySelector('#feedback1').innerHTML = 'Correct!';
+            document.addEventListener('DOMContentLoaded', funtion() {
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback1').innerHTML = 'Correct!';
+                });
+
+                let incorrect = document.querySelector('.incorrect');
+                incorrect.addEventListener('click', function() {
+                    incorrect.style.backgroundColor = 'red'
+                });
             });
 
-            let incorrect = document.querySelector('.incorrect');
-            incorrect.addEventListener('click', function() {
-                incorrect.style.backgroundColor = 'red'
-            });
         </script>
 
     </head>
