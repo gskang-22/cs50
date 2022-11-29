@@ -13,6 +13,11 @@
                 correct.style.backgroundColor = 'green';
                 document.querySelector('#feedback1').innerHTML = 'Correct!';
             });
+
+            let incorrect = document.querySelector('.incorrect');
+            incorrect.addEventListener('click', function() {
+                incorrect.style.backgroundColor = 'red'
+            });
         </script>
 
     </head>
