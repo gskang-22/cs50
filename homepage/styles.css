@@ -21,3 +21,21 @@ body {
     font-size: 48px;
     text-align: center;
 }
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+  }
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+}
+
+.button3 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+}
