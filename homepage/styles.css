@@ -12,6 +12,7 @@ body {
     background-color: #477bff;
     color: #fff;
     margin-bottom: 2rem;
+    margin-top: 50px;
     padding: 2rem 1rem;
     text-align: center;
 }
@@ -27,7 +28,7 @@ body {
     color: #DC143C;
     border: 2px solid #DC143C;
     border-radius: 8px;
-    font-size: 24px
+    font-size: 24px;
   }
 
 .button2 {
@@ -35,7 +36,7 @@ body {
     color: #008080;
     border: 2px solid #008080;
     border-radius: 8px;
-    font-size: 24px
+    font-size: 24px;
 }
 
 .button3 {
@@ -43,5 +44,5 @@ body {
     color: #4CAF50;
     border: 2px solid #4CAF50;
     border-radius: 8px;
-    font-size: 24px
+    font-size: 24px;
 }
