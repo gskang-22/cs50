@@ -7,8 +7,9 @@
         <link href="styles.css" rel="stylesheet">
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                let buttons = document.querySelector('#button');
-                for (let i = 0; i < button-.length; i++) {
+                let div = document.querySelector('#button');
+                let buttons = div.children;
+                for (let i = 0; i < buttons.length; i++) {
                     buttons[i].addEventListener('hover', function() {
                         buttons[i].backgroundColor = 'black';
                     })
