@@ -24,13 +24,12 @@ body {
 }
 
 [class*="button-"] {
-    background-color: white;
+    background-color: none;
     border-radius: 8px;
     font-size: 50px;
-    text-align: center;
     text-decoration: none;
     margin: 10px;
-    padding: 
+    padding: 0;
 }
 
 .button-1 {
