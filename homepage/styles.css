@@ -28,7 +28,7 @@ body {
     border-radius: 8px;
     font-size: 50px;
     text-align: center;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .button-1 {
@@ -53,6 +53,10 @@ body {
 
 [class*="button-"]:hover {
     background-color: bisque;
+}
+
+#button {
+    text-align: center;
 }
 
 title {
