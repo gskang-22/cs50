@@ -23,40 +23,31 @@ body {
     text-align: center;
 }
 
-.button1 {
+[class*="button-"] {
     background-color: white;
+    border-radius: 8px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.button-1 {
     color: #DC143C;
     border: 2px solid #DC143C;
-    border-radius: 8px;
-    font-size: 50px;
-    text-align: center;
   }
 
-.button2 {
-    background-color: white;
+.button-2 {
     color: #008080;
     border: 2px solid #008080;
-    border-radius: 8px;
-    font-size: 50px;
-    text-align: center;
 }
 
-.button3 {
-    background-color: white;
+.button-3 {
     color: #4CAF50;
     border: 2px solid #4CAF50;
-    border-radius: 8px;
-    font-size: 50px;
-    text-align: center;
 }
 
-.button4 {
-    background-color: white;
+.button-4 {
     color: black;
     border: 2px solid black;
-    border-radius: 8px;
-    font-size: 50px;
-    text-align: center;
 }
 
 title {
