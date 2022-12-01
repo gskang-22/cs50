@@ -7,7 +7,7 @@
         <link href="styles.css" rel="stylesheet">
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                let buttons = document.querySelector('button-');
+                let buttons = document.querySelector('#button');
                 for (let i = 0; i < button-.length; i++) {
                     buttons[i].addEventListener('hover', function() {
                         buttons[i].backgroundColor = 'black';
@@ -24,10 +24,12 @@
                 This is a website about the most common household pets. Find out more below!
             </p>
         </div>
-
-        <button type="button" href="cat.html" class="button-1">Cats</button>
+        <div id="button">
+            <button type="button" href="cat.html" class="button-1">Cats</button>
         <button type="button" href="dog.html" class="button-2">Dogs</button>
         <button type="button" href="fish.html" class="button-3">Fish</button>
         <button type="button" href="hamster.html" class="button-4">Hamster</button>
+        </div>
+
     </body>
 </html>
