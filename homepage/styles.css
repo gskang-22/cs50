@@ -48,8 +48,8 @@ body {
 }
 
 .button-4 {
-    color: black;
-    border: 2px solid black;
+    color: #000000;
+    border: 2px solid #000000;
 }
 
 [class*="button-"]:hover {
