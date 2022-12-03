@@ -118,7 +118,7 @@ def quote():
         input_symbol = request.form.get("symbol")
         get_quote = lookup(input_symbol)
         name = get_quote["name"]
-        price = get_quote["price"]
+        price = usd(get_quote["price"])
         symbol = get_quote["symbol"]
         return render_template("quoted.html", name=name, price=price, symbol=symbol)
 
