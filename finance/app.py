@@ -123,13 +123,13 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        password2 = request.form.get('password2')
+        confirmation = request.form.get('confirmation')
         if not username:
             return apology("must provide username", 403)
 
-        elif not password or not password2:
+        elif not password or not confirmation:
             return apology("must provide password", 403)
-        elif password != password2:
+        elif password != confirmation:
             return apology("passwords do not match", 403)
 
         rows = db.execute("SELECT username FROM user")
