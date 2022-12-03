@@ -137,7 +137,7 @@ def register():
         if username in rows:
             return apology("username taken", 403)
 
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, )
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
 
     return apology("TODO")
 
