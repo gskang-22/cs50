@@ -121,18 +121,23 @@ def register():
         return render_template("register.html")
 
     if request.method == 'POST':
-        if not request.form.get('username'):
+        username = request.form.get('username')
+        password = request.form.get('password')
+        password2 = request.form.get('password2')
+        if not username:
             return apology("must provide username", 403)
 
-        elif not request.form.get("password") or not request.form.get("password2"):
+        elif not password or not password2:
             return apology("must provide password", 403)
-        elif request.form.get("password") != request.form.get("password2"):
+        elif password != password2:
             return apology("passwords do not match", 403)
 
         rows = db.execute("SELECT username FROM user")
 
-        if request.form.get('username') in rows:
+        if username in rows:
             return apology("username taken", 403)
+
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, )
 
     return apology("TODO")
 
