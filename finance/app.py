@@ -119,6 +119,9 @@ def register():
     """Register user"""
     if request.method == 'POST':
         username = request.form.get('username')
+        rows = db.execute("SELECT username FROM user")
+        if username in rows:
+            return apology()
     return apology("TODO")
 
 
