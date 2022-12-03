@@ -132,7 +132,7 @@ def register():
         elif password != confirmation:
             return apology("passwords do not match", 403)
 
-        rows = db.execute("SELECT username FROM user")
+        rows = db.execute("SELECT username FROM users")
 
         if username in rows:
             return apology("username taken", 403)
