@@ -118,11 +118,17 @@ def quote():
 def register():
     """Register user"""
     if request.method == 'POST':
-        username = request.form.get('username')
+        if not request.form.get('username'):
+            return apology("must provide username", 403)
+
+        elif not request.form.get("password"):
+            return apology("must provide password", 403)
+
         rows = db.execute("SELECT username FROM user")
-        if username in rows:
-            return apology("username taken", 403)
         
+        if request.form.get('username') in rows:
+            return apology("username taken", 403)
+
     return apology("TODO")
 
 
