@@ -121,7 +121,8 @@ def register():
         username = request.form.get('username')
         rows = db.execute("SELECT username FROM user")
         if username in rows:
-            return apology()
+            return apology("username taken", 403)
+        
     return apology("TODO")
 
 
