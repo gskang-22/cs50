@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    index
+    history
 {% endblock %}
 
 {% block main %}
@@ -13,12 +13,12 @@
             <th>Transacted</th>
         </tr>
 
+        {% for row in rows %}
         <tr>
-            {% for row in rows%}
             <td>{{row["symbol"]}}</td>
             <td>{{row["shares_number"]}}</td>
-            <td>{{row["price"]</td>
+            <td>{{row["price"]}}</td>
             <td>{{row["now"]}}</td>
-            {% endfor %}
         </tr>
+        {% endfor %}
 {% endblock %}
