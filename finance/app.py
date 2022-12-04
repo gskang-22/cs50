@@ -97,8 +97,8 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    rows = db.execute("SELECT * FROM users_history")
-    return render_template("history.html")
+    rows = db.execute("SELECT * FROM users_history WHERE user_id = ?", session["user_id"])
+    return render_template("history.html", rows=rows)
 
 
 @app.route("/login", methods=["GET", "POST"])
