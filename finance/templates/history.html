@@ -7,36 +7,18 @@
 {% block main %}
     <table>
         <tr>
-            <th>symbol</th>
-            <th>name</th>
-            <th>shares</th>
-            <th>price</th>
-            <th>total</th>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
         </tr>
 
         <tr>
             {% for row in rows%}
             <td>{{row["symbol"]}}</td>
-            <td>{{row["name"]}}</td>
-            <td>{{row["SUM[shares]"]}}</td>
+            <td>{{row["shares_number"]}}</td>
             <td>{{row["price"]</td>
-            <td>{{row["SUM[shares]"] * row["price"]}}</td>
+            <td>{{row["now"]}}</td>
             {% endfor %}
         </tr>
-
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Cash</td>
-            <td>{{cash}}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>TOTAL</td>
-            <td>{{grand_total}}</td>
-        </tr>
-    </table>
 {% endblock %}
