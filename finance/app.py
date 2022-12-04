@@ -248,3 +248,7 @@ def change():
 
         if password_new != password_confirm:
             return apology("passwords don't match", 304)
+        elif not check_password_hash(rows[0]["hash"], password_old):
+            return apology("invalid password", 403)
+        else:
+            
