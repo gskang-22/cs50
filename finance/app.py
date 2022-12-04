@@ -44,7 +44,8 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    db.execute("SELECT SUM(shares_number) FROM users_history")
+    rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
+    
     return render_template(index.html)
 
 
