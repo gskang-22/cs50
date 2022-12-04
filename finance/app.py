@@ -50,7 +50,7 @@ def index():
 
     for row in rows:
         if row["SUM(shares_number)"] == 0:
-            remove(row)
+            rows.remove("row")
 
         stock_quote = lookup(row["symbol"])
         row["name"] = stock_quote["name"]
