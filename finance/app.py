@@ -64,7 +64,9 @@ def buy():
         price = get_quote["price"]
         symbol = get_quote["symbol"]
 
-        user_current_cash = db.execute("SELECT cash FROM users WHERE username = ?", session)
+        user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        if user_current_cash < (price * request.form.get("shares")):
+            return apology("insufficient cash", 403)
         return redirect("/")
 
 @app.route("/history")
