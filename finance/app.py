@@ -72,7 +72,7 @@ def buy():
 
     if request.method == "POST":
         get_quote = lookup(request.form.get("symbol"))
-        shares_number = int(request.form.get("shares"))
+        shares_number = int(float(request.form.get("shares")))
 
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 400)
