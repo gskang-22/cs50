@@ -200,7 +200,13 @@ def register():
 @login_required
 def sell():
     if request.method == "GET":
-        return render_template("sell.html")
+        rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
+
+        for row in rows:
+            if row['SUM(shares_number)'] == 0:
+                rows.remove(row)
+
+        return render_template("sell.html", rows=rows)
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
@@ -222,7 +228,7 @@ def sell():
         if shares > rows[0]["SUM(shares_number)"]:
             return apology("insufficient shares", 403)
 
-        
+
 
         shares = 0 - shares
         db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
