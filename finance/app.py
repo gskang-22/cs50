@@ -250,6 +250,8 @@ def change():
             return apology("passwords don't match", 304)
         elif not check_password_hash(rows[0]["hash"], password_old):
             return apology("invalid password", 403)
+        elif not password_new:
+            return apology("enter new password", 403)
         else:
             db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(password_new), session["user_id"])
             return redirect("/")
