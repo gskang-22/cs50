@@ -222,6 +222,8 @@ def sell():
         if shares > rows[0]["SUM(shares_number)"]:
             return apology("insufficient shares", 403)
 
+        
+
         shares = 0 - shares
         db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
         return redirect("/")
