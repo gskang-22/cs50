@@ -56,7 +56,7 @@ def index():
         row["name"] = stock_quote["name"]
         row["price"] = stock_quote["price"]
         row["total"] = row["price"] * row["SUM(shares_number)"]
-        investment_total += stock_quote["price"]
+        investment_total += row["total"]
 
     grand_total = cash + investment_total
 
