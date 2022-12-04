@@ -51,11 +51,16 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
+        get_quote = lookup(request.form.get("symbol"))
         if not request.form.get("symbol"):
-            return apology("Symbol does not exist", 403)
+            return apology("input symbol is blank", 403)
         elif request.form.get("shares") < 0:
             return apology("number of shares is not a positive integer", 403)
-        
+        elif not get_quote:
+            return apology("symbol does not exist", 403)
+        return redirect("/")
+
+
 
 
 @app.route("/history")
@@ -122,6 +127,8 @@ def quote():
     if request.method == "POST":
         input_symbol = request.form.get("symbol")
         get_quote = lookup(input_symbol)
+        if not get_quote:
+            return apology("symbol does not exist", 403)
         name = get_quote["name"]
         price = usd(get_quote["price"])
         symbol = get_quote["symbol"]
