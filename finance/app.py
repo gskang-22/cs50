@@ -50,7 +50,7 @@ def index():
     for row in rows:
         stock_quote = lookup(row["symbol"])
         investment_total += stock_quote["price"]
-
+    grand_total = cash + investment_total
     return render_template(index.html)
 
 
