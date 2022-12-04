@@ -47,11 +47,15 @@ def index():
     rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session ["id"])[0]["cash"]
     investment_total = 0
+
     for row in rows:
+        if row["SUM(shares_number)"] == 0:
+            
+
         stock_quote = lookup(row["symbol"])
-        investment_total += stock_quote["price"]
         row["name"] = stock_quote["name"]
         row["price"] = stock_quote["price"]
+        investment_total += stock_quote["price"]
     grand_total = cash + investment_total
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
