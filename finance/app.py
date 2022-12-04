@@ -201,7 +201,7 @@ def sell():
 
     elif request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         get_quote = lookup(symbol)
         price = get_quote["price"]
         now = datetime.datetime.now()
@@ -216,9 +216,9 @@ def sell():
         elif not get_quote:
             return apology("symbol does not exist", 403)
 
-        if int(symbol) > rows[0]["SUM(shares_number)"]:
+        if symbol > rows[0]["SUM(shares_number)"]:
             return apology("insufficient shares", 403)
 
-        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, -shares)
 
         return render_template("/")
