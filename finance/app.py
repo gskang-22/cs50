@@ -45,11 +45,12 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
-    cash[0]["cash"] = db.execute("SELECT cash FROM users WHERE id = ?", session ["id"])
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session ["id"])[0]["cash"]
     investment_total = 0
     for row in rows:
-        stock_quote = lookup(symbol)
+        stock_quote = lookup(row["symbol"])
         investment_total += stock_quote["price"]
+
     return render_template(index.html)
 
 
