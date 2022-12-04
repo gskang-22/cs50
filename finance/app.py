@@ -72,7 +72,7 @@ def buy():
 
     if request.method == "POST":
         get_quote = lookup(request.form.get("symbol"))
-        shares_number = request.form.get("shares")
+        shares_number = float(request.form.get("shares"))
 
         if not isinstance(shares_number, int):
             return apology("number of shares is not a positive integer", 400)
