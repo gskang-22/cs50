@@ -214,6 +214,7 @@ def sell():
         elif not get_quote:
             return apology("symbol does not exist", 403)
 
-
+        for row in rows:
+            
 
         return render_template("/")
