@@ -74,7 +74,7 @@ def buy():
 
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 403)
-        elif int(request.form.get("shares")) < 0:
+        elif int(request.form.get("shares")) <= 0:
             return apology("number of shares is not a positive integer", 403)
         elif not get_quote:
             return apology("symbol does not exist", 403)
@@ -200,6 +200,12 @@ def sell():
     elif request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        
+        rows = db.execute("SELECT symbol FROM )
+
+        if int(shares) <= 0:
+            return apology("number of shares is not a positive integer", 403)
+        elif not symbol:
+            return apology("invalid symbol", 403)
+
 
         return render_template("/")
