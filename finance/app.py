@@ -45,7 +45,10 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
-    
+    for row in rows:
+        symbol = row["symbol"]
+        stock_quote = lookup(symbol)
+        
     return render_template(index.html)
 
 
