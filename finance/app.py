@@ -92,7 +92,7 @@ def buy():
             return apology("insufficient cash", 403)
 
         now = datetime.datetime.now()
-        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, request.form.get("shares"))
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, shares_number)
 
         return redirect("/")
 
