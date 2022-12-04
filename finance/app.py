@@ -58,7 +58,7 @@ def index():
         row["total"] = row["price"] * row["SUM(shares_number)"]
         investment_total += stock_quote["price"]
 
-    grand_total = cash + investment_total
+    grand_total = round(cash + investment_total)
 
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
