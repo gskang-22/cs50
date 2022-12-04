@@ -59,7 +59,6 @@ def index():
         investment_total += stock_quote["price"]
 
     grand_total = cash + investment_total
-    cash = cash
 
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
