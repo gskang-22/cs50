@@ -58,8 +58,8 @@ def index():
         row["total"] = row["price"] * row["SUM(shares_number)"]
         investment_total += stock_quote["price"]
 
-    grand_total = usd(cash + investment_total)
-    cash = usd(cash)
+    grand_total = cash + investment_total
+    cash = cash
 
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
@@ -168,7 +168,7 @@ def quote():
         if not get_quote:
             return apology("symbol does not exist", 403)
         name = get_quote["name"]
-        price = usd(get_quote["price"])
+        price = get_quote["price"]
         symbol = get_quote["symbol"]
         return render_template("quoted.html", name=name, price=price, symbol=symbol)
 
@@ -186,7 +186,7 @@ def register():
             return apology("must provide username", 400)
 
         elif not password or not confirmation:
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
         elif password != confirmation:
             return apology("passwords don't match", 400)
 
@@ -196,6 +196,7 @@ def register():
             return apology("username taken", 200)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
+        return redirect("/")
 
 
 
