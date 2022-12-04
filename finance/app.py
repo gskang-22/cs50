@@ -244,6 +244,7 @@ def change():
         password_new = request.form.get("password_new")
         password_confirm = request.form.get("password_confirm")
 
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+
         if password_new != password_confirm:
             return apology("passwords don't match", 304)
-        
