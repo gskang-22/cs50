@@ -43,12 +43,12 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    rows = db.execute("SELECT symbol, shares_number FROM users_history WHERE user_id = ? GROUP BY symbol", session["user_id"])
+    rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? GROUP BY symbol", session["user_id"])
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session ["user_id"])[0]["cash"]
     investment_total = 0
 
     for row in rows:
-        if row["shares_number"] == 0:
+        if row["SUM(shares_number)"] == 0:
             rows.remove(row)
             continue
 
