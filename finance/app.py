@@ -233,3 +233,17 @@ def sell():
         shares = 0 - shares
         db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
         return redirect("/")
+
+@app.route("/change", methods=["GET", "POST"])
+@login_required
+def change():
+    if request.method == "GET":
+        return render_template("change.html")
+    if request.method == "POST":
+        password_old = request.form.get("password")
+        password_new = request.form.get("password_new")
+        password_confirm = request.form.get("password_confirm")
+
+        if password_new != password_confirm:
+            return apology("passwords don't match", 304)
+        
