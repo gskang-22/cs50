@@ -194,7 +194,7 @@ def register():
 
         for row in rows:
             if username == row["username"]:
-                return apology("username taken", 200)
+                return apology("username taken", 400)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
         return redirect("/")
