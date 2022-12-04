@@ -52,12 +52,13 @@ def index():
         if row["SUM(shares_number)"] == 0:
             rows.remove("row")
             continue
-        
+
         stock_quote = lookup(row["symbol"])
         row["name"] = stock_quote["name"]
         row["price"] = stock_quote["price"]
         investment_total += stock_quote["price"]
     grand_total = cash + investment_total
+
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
 
@@ -193,5 +194,5 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
+    
     return apology("TODO")
