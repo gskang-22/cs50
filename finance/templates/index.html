@@ -19,8 +19,8 @@
             <td>{{row["symbol"]}}</td>
             <td>{{row["name"]}}</td>
             <td>{{row["SUM[shares]"]}}</td>
-            <td>{{</td>
-            <td></td>
+            <td>{{row["price"]</td>
+            <td>{{row["SUM[shares]"] * row["price"]}}</td>
             {% endfor %}
         </tr>
 
@@ -29,14 +29,14 @@
             <td></td>
             <td></td>
             <td>Cash</td>
-            <td>todo</td>
+            <td>{{cash}}</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
             <td>TOTAL</td>
-            <td>todo</td>
+            <td>{{grand_total}}</td>
         </tr>
     </table>
 {% endblock %}
