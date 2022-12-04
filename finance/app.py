@@ -69,7 +69,7 @@ def buy():
         symbol = get_quote["symbol"]
 
         user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if user_current_cash < (price * request.form.get("shares")):
+        if user_current_cash[0] < (price * int(request.form.get("shares"))):
             return apology("insufficient cash", 403)
 
         now = datetime.datetime.now()
