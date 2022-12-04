@@ -52,16 +52,20 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         get_quote = lookup(request.form.get("symbol"))
+
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 403)
         elif request.form.get("shares") < 0:
             return apology("number of shares is not a positive integer", 403)
         elif not get_quote:
             return apology("symbol does not exist", 403)
+
+        name = get_quote["name"]
+        price = get_quote["price"]
+        symbol = get_quote["symbol"]
+
+        user_current_cash = db.execute("SELECT cash FROM users WHERE username = ?", session)
         return redirect("/")
-
-
-
 
 @app.route("/history")
 @login_required
