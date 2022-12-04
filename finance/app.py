@@ -71,22 +71,24 @@ def buy():
 
     if request.method == "POST":
         get_quote = lookup(request.form.get("symbol"))
+        shares_number = int(request.for.get("shares"))
 
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 403)
-        elif int(request.form.get("shares")) <= 0:
+        elif shares_number <= 0:
             return apology("number of shares is not a positive integer", 403)
         elif not get_quote:
             return apology("symbol does not exist", 403)
-        elif not request.form.get("shares"):
+        elif not shares_number:
             return apology("input number of shares", 403)
 
         name = get_quote["name"]
         price = get_quote["price"]
         symbol = get_quote["symbol"]
+        price_total = price * shares_number
 
         user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if user_current_cash[0]["cash"] < (price * int(request.form.get("shares"))):
+        if user_current_cash[0]["cash"] < price_total:
             return apology("insufficient cash", 403)
 
         now = datetime.datetime.now()
