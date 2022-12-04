@@ -203,7 +203,7 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         get_quote = lookup(symbol)
-        rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ?", session["user_id"])
+        rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
 
         if int(shares) <= 0:
             return apology("number of shares is not a positive integer", 403)
@@ -215,6 +215,7 @@ def sell():
             return apology("symbol does not exist", 403)
 
         for row in rows:
-            
+            if int(symbol) > SUM(shares_number):
+                return apology("insufficient shares", 403)
 
         return render_template("/")
