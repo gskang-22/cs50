@@ -75,9 +75,13 @@ def buy():
         get_quote = lookup(request.form.get("symbol"))
         shares_number = request.form.get("shares")
 
+        if not isinstance(shares_number, int):
+            return apology("number of shares is not a positive integer", 400)
+        shares_number = int(shares_number)
+
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 400)
-        elif shares_number <= 0 or not isinstance(shares_number, int):
+        elif shares_number <= 0:
             return apology("number of shares is not a positive integer", 400)
         elif not get_quote:
             return apology("symbol does not exist", 400)
