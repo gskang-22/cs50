@@ -200,12 +200,12 @@ def sell():
     elif request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        rows = db.execute("SELECT symbol FROM )
+        rows = db.execute("SELECT symbol FROM users_history WHERE user_id = ?", session["user_id"])
 
         if int(shares) <= 0:
             return apology("number of shares is not a positive integer", 403)
         elif not symbol:
             return apology("invalid symbol", 403)
-
+        elif 
 
         return render_template("/")
