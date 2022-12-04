@@ -51,7 +51,8 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("symbol"))
+        if len(rows) != 1 
     return apology("TODO")
 
 
