@@ -11,6 +11,14 @@
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="symbol" placeholder="Stock's symbol" type="text">
         </div>
 
+        <div>
+            <select>
+                {% for row in rows %}
+                <option></option>
+                {% endfor %}
+            </select>
+        </div>
+
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="shares" placeholder="Number of shares" type="number">
         </div>
