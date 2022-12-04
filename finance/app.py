@@ -196,6 +196,7 @@ def register():
 def sell():
     if request.method == "GET":
         return render_template("sell.html")
-    else if request.method == "POST":
-        
-    return apology("TODO")
+    elif request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+        return render_template("/")
