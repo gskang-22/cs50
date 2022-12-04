@@ -203,6 +203,8 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         get_quote = lookup(symbol)
+        price = get_quote["price"]
+        now = datetime.datetime.now()
         rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
 
         if int(shares) <= 0:
@@ -214,8 +216,9 @@ def sell():
         elif not get_quote:
             return apology("symbol does not exist", 403)
 
-        for row in rows:
-            if int(symbol) > SUM(shares_number):
-                return apology("insufficient shares", 403)
+        if int(symbol) > rows[0]["SUM(shares_number)"]:
+            return apology("insufficient shares", 403)
+
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
 
         return render_template("/")
