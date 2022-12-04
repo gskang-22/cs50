@@ -165,7 +165,7 @@ def register():
         elif not password or not confirmation:
             return apology("must provide password", 403)
         elif password != confirmation:
-            return apology("passwords do not match", 403)
+            return apology("passwords don't match", 400)
 
         rows = db.execute("SELECT username FROM users")
 
