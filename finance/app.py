@@ -183,7 +183,7 @@ def register():
         password = request.form.get('password')
         confirmation = request.form.get('confirmation')
         if not username:
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
 
         elif not password or not confirmation:
             return apology("must provide password", 403)
@@ -193,11 +193,10 @@ def register():
         rows = db.execute("SELECT username FROM users")
 
         if username in rows:
-            return apology("username taken", 403)
+            return apology("username taken", 200)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
 
-    return apology("TODO")
 
 
 @app.route("/sell", methods=["GET", "POST"])
