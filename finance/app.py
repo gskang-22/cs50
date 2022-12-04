@@ -44,7 +44,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-
+    db.execute("SELE)
     return render_template(index.html)
 
 
