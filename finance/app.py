@@ -207,7 +207,7 @@ def sell():
         now = datetime.datetime.now()
         rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
 
-        if int(shares) <= 0:
+        if shares <= 0:
             return apology("number of shares is not a positive integer", 403)
         elif not shares:
             return apology("input number of shares", 403)
