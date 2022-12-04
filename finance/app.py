@@ -78,6 +78,8 @@ def buy():
             return apology("number of shares is not a positive integer", 403)
         elif not get_quote:
             return apology("symbol does not exist", 403)
+        elif not request.form.get("shares"):
+            return apology("input number of shares", 403)
 
         name = get_quote["name"]
         price = get_quote["price"]
@@ -205,9 +207,13 @@ def sell():
 
         if int(shares) <= 0:
             return apology("number of shares is not a positive integer", 403)
+        elif not shares:
+            return apology("input number of shares", 403)
         elif not symbol:
             return apology("invalid symbol", 403)
         elif not get_quote:
             return apology("symbol does not exist", 403)
+
+        
 
         return render_template("/")
