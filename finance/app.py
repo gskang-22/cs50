@@ -92,8 +92,11 @@ def buy():
         if user_current_cash[0]["cash"] < price_total:
             return apology("insufficient cash", 403)
 
+        cash_left = user_current_cash[0]["cash"] - price_total
+
         now = datetime.datetime.now()
         db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, shares_number)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash_left, session["user_id"])
 
         return redirect("/")
 
