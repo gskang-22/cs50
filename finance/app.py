@@ -39,13 +39,6 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = 1 GROUP BY symbol")
-for row in rows:
-        if row["SUM(shares_number)"] == 0:
-            rows.remove(row)
-            continue
-        print(row["SUM(shares_number)"])
-
 @app.route("/")
 @login_required
 def index():
