@@ -199,7 +199,7 @@ def sell():
     if request.method == "GET":
         return render_template("sell.html")
 
-    elif request.method == "POST":
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         get_quote = lookup(symbol)
@@ -221,4 +221,4 @@ def sell():
 
         shares = 0 - shares
         db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
-        return render_template("/")
+        return redirect("/")
