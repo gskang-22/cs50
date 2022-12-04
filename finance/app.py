@@ -51,9 +51,11 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("symbol"))
-        if len(rows) != 1 
-    return apology("TODO")
+        if not request.form.get("symbol"):
+            return apology("Symbol does not exist", 403)
+        elif request.form.get("shares") < 0:
+            return apology("number of shares is not a positive integer", 403)
+        
 
 
 @app.route("/history")
