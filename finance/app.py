@@ -76,13 +76,13 @@ def buy():
         shares_number = int(request.form.get("shares"))
 
         if not request.form.get("symbol"):
-            return apology("input symbol is blank", 403)
+            return apology("input symbol is blank", 400)
         elif shares_number <= 0:
-            return apology("number of shares is not a positive integer", 403)
+            return apology("number of shares is not a positive integer", 400)
         elif not get_quote:
-            return apology("symbol does not exist", 403)
+            return apology("symbol does not exist", 400)
         elif not shares_number:
-            return apology("input number of shares", 403)
+            return apology("input number of shares", 400)
 
         name = get_quote["name"]
         price = get_quote["price"]
@@ -91,7 +91,7 @@ def buy():
 
         user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if user_current_cash[0]["cash"] < price_total:
-            return apology("insufficient cash", 403)
+            return apology("insufficient cash", 400)
 
         cash_left = user_current_cash[0]["cash"] - price_total
 
@@ -166,7 +166,7 @@ def quote():
         input_symbol = request.form.get("symbol")
         get_quote = lookup(input_symbol)
         if not get_quote:
-            return apology("symbol does not exist", 403)
+            return apology("symbol does not exist", 400)
         name = get_quote["name"]
         price = get_quote["price"]
         symbol = get_quote["symbol"]
@@ -221,16 +221,16 @@ def sell():
         rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
 
         if shares <= 0:
-            return apology("number of shares is not a positive integer", 403)
+            return apology("number of shares is not a positive integer", 400)
         elif not shares:
-            return apology("input number of shares", 403)
+            return apology("input number of shares", 400)
         elif not symbol:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol", 400)
         elif not get_quote:
-            return apology("symbol does not exist", 403)
+            return apology("symbol does not exist", 400)
 
         if shares > rows[0]["SUM(shares_number)"]:
-            return apology("insufficient shares", 403)
+            return apology("insufficient shares", 400)
 
 
 
@@ -253,9 +253,9 @@ def change():
         if password_new != password_confirm:
             return apology("passwords don't match", 304)
         elif not check_password_hash(rows[0]["hash"], password_old):
-            return apology("invalid password", 403)
+            return apology("invalid password", 400)
         elif not password_new:
-            return apology("enter new password", 403)
+            return apology("enter new password", 400)
         else:
             db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(password_new), session["user_id"])
             return redirect("/")
