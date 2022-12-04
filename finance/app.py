@@ -69,11 +69,11 @@ def buy():
         symbol = get_quote["symbol"]
 
         user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if user_current_cash[0] < (price * int(request.form.get("shares"))):
+        if user_current_cash[0]["cash"] < (price * int(request.form.get("shares"))):
             return apology("insufficient cash", 403)
 
         now = datetime.datetime.now()
-        db.execute("INSERT INTO users_history (users_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, request.form.get("shares"))
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, request.form.get("shares"))
 
         return redirect("/")
 
