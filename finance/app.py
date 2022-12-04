@@ -51,6 +51,7 @@ def index():
         stock_quote = lookup(row["symbol"])
         investment_total += stock_quote["price"]
         row["name"] = stock_quote["name"]
+        row["price"] = stock_quote["price"]
     grand_total = cash + investment_total
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
 
