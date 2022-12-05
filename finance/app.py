@@ -39,12 +39,13 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 @app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? GROUP BY symbol", session["user_id"])
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session ["user_id"])[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
     investment_total = 0
 
     for row in rows:
@@ -61,6 +62,7 @@ def index():
     grand_total = cash + investment_total
 
     return render_template("index.html", grand_total=grand_total, rows=rows, cash=cash)
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -96,10 +98,12 @@ def buy():
         cash_left = user_current_cash[0]["cash"] - price_total
 
         now = datetime.datetime.now()
-        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, int(shares_number))
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)",
+                    session["user_id"], now, "buy", symbol, price, int(shares_number))
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash_left, session["user_id"])
 
         return redirect("/")
+
 
 @app.route("/history")
 @login_required
@@ -172,6 +176,7 @@ def quote():
         symbol = get_quote["symbol"]
         return render_template("quoted.html", name=name, price=price, symbol=symbol)
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -200,7 +205,6 @@ def register():
         return redirect("/")
 
 
-
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
@@ -219,7 +223,8 @@ def sell():
         get_quote = lookup(symbol)
         price = get_quote["price"]
         now = datetime.datetime.now()
-        rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+        rows = db.execute("SELECT symbol, SUM(shares_number) FROM users_history WHERE user_id = ? AND symbol = ?",
+                           session["user_id"], symbol)
 
         if shares <= 0:
             return apology("number of shares is not a positive integer", 400)
@@ -233,11 +238,11 @@ def sell():
         if shares > rows[0]["SUM(shares_number)"]:
             return apology("insufficient shares", 400)
 
-
-
         shares = 0 - shares
-        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "sell", symbol, price, shares)
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)",
+                    session["user_id"], now, "sell", symbol, price, shares)
         return redirect("/")
+
 
 @app.route("/change", methods=["GET", "POST"])
 @login_required
