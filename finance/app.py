@@ -71,11 +71,11 @@ def buy():
 
     if request.method == "POST":
         get_quote = lookup(request.form.get("symbol"))
-        shares_number = int(float(request.form.get("shares")))
+        shares_number = request.form.get("shares")
 
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 400)
-        elif shares_number < 0 or  not shares.isdigit():
+        elif int(shares_number) < 0 or  not shares_number.isdigit():
             return apology("number of shares is not a positive integer", 400)
         elif not get_quote:
             return apology("symbol does not exist", 400)
@@ -85,7 +85,7 @@ def buy():
         name = get_quote["name"]
         price = get_quote["price"]
         symbol = get_quote["symbol"]
-        price_total = price * shares_number
+        price_total = price * int(shares_number)
 
         user_current_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if user_current_cash[0]["cash"] < price_total:
@@ -94,7 +94,7 @@ def buy():
         cash_left = user_current_cash[0]["cash"] - price_total
 
         now = datetime.datetime.now()
-        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, shares_number)
+        db.execute("INSERT INTO users_history (user_id, date, type, symbol, price, shares_number) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], now, "buy", symbol, price, int(shares_number))
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash_left, session["user_id"])
 
         return redirect("/")
