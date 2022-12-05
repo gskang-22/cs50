@@ -75,7 +75,9 @@ def buy():
 
         if not request.form.get("symbol"):
             return apology("input symbol is blank", 400)
-        elif int(shares_number) < 0 or  not shares_number.isdigit():
+        elif not shares_number.isdigit():
+            return apology("number of shares is not a positive integer", 400)
+        elif int(shares_number) < 0:
             return apology("number of shares is not a positive integer", 400)
         elif not get_quote:
             return apology("symbol does not exist", 400)
