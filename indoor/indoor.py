@@ -1,2 +1,2 @@
 x = input("")
-print(f"{lower.(x)}")
+print(f"{x.lower}")
