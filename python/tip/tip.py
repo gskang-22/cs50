@@ -7,12 +7,14 @@ def main():
 
 def dollars_to_float(d):
     d1 = float(d[1:])
+    print(d1)
     return d1
 
 
 
 def percent_to_float(p):
     p1 = float(p[0:1])
+    print(p1)
     return (p1 / 100)
 
 
