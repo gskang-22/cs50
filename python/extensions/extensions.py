@@ -2,7 +2,7 @@ x = input("File name: ").lower()
 if ".gif"in x:
     print("image/gif")
 elif ".jpg"in x:
-    print("image/jpg")
+    print("image/jpeg")
 elif ".jpeg"in x:
     print("image/jpeg")
 elif ".png"in x:
