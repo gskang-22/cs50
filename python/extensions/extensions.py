@@ -10,4 +10,8 @@ elif ".png"in x:
 elif ".pdf"in x:
     print("application/pdf")
 elif ".txt"in x:
-    print("image/jpg")
+    print("text/plain")
+elif ".zip"in x:
+    print("application/zip")
+else:
+    print("application/octet-stream")
