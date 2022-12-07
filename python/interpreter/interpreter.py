@@ -7,6 +7,6 @@ if y == "+":
 elif y == "-":
     print(x - z)
 elif y == "*":
-    print(f"{(x * z):1f}")
+    print(round((x * z), 2))
 elif y == "/":
-    print(f"{(x / z):1f}")
+    print(round((x / z), 2))
