@@ -1,7 +1,7 @@
 x = input("")
 if x == "Hello :)":
-    print("")
+    print("Hello 🙂")
 elif x == "Goodbye:(":
-    print("")
+    print("Goodbye 🙁")
 elif x == "Hello :) Goodbye :(":
-    print("")
+    print("Hello 🙂 Goodbye 🙁")
