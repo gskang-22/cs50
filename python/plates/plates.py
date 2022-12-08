@@ -7,7 +7,6 @@ def main():
 
 
 def is_valid(s):
-    count_letters = 0
     if not s[0:1].isalpha():
         return False
 
@@ -15,7 +14,7 @@ def is_valid(s):
         return False
 
     for char in s:
-        if not char.isalpha() or not char.isdigit():
+        if not char.isalpha() and not char.isdigit():
             return False
 
     for i in range(len(s)):
