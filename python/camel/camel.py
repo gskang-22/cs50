@@ -6,8 +6,6 @@ for i in range(len(list)):
         list[i].lower()
         list.insert(i, "_")
 
-print(list)
-
 list = ''.join(list)
 
 print(list)
