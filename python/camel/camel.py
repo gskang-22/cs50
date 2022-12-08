@@ -1,10 +1,10 @@
 camel = input("camelCase: ")
-list = list(camel)
+new = ""
 
-for i in range(len(list)):
-    list[i].lower()
-    
+for letter in camel:
+    if letter.isupper():
+        new = new + "_" + letter.lower()
+    else:
+        new += letter
 
-list = ''.join(list)
-
-print(list)
+print(new)
