@@ -2,7 +2,7 @@ x = input("Input: ")
 new = ""
 
 for letter in x:
-    if letter.lower() != "a" or "e" or "i" or "o" or "u":
+    if letter != "a" and letter != "e" and letter != "i" and letter != "o" and letter != "u":
         new += letter
 
-print(new)
+print(f"Output: {new}")
