@@ -7,4 +7,4 @@ def main():
 
 
 def is_valid(s):
-    
+    count_letters = 0
