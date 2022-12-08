@@ -1,8 +1,5 @@
 camel = input("camelCase: ")
-list = []
-
-for letter in camel:
-    list.append(letter)
+list = list(camel)
 
 for i in range(len(list)):
     if list[i].isupper():
