@@ -4,7 +4,9 @@ list = list(camel)
 for i in range(len(list)):
     if list[i].isupper():
         list[i].lower()
-        list.insert(i, " ")
+        list.insert(i, "_")
+
+print(list)
 
 list = ''.join(list)
 
