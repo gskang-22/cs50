@@ -15,4 +15,7 @@ def is_valid(s):
     for char in s:
         if not char.isalpha() or not char.isdigit():
             return False
-        
+    for i in range(len(s)):
+        if s[i].isdigit():
+            break
+    if s[i:len(s)]
