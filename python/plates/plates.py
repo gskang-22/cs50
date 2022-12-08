@@ -18,8 +18,10 @@ def is_valid(s):
             return False
 
     for i in range(len(s)):
-        if s[i].isdigit() and not s[i:len(s)].isdigit():
-            return False
+        if s[i].isdigit():
+            break
+    if s[i] == "0" or not s[i:len(s)].isdigit():
+        return False
 
     return True
 
