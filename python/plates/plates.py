@@ -21,8 +21,8 @@ def is_valid(s):
         if s[i].isdigit():
             if s[i] == "0" or not s[i:len(s)].isdigit():
                 return False
-        else:
-            break
+            else:
+                break
 
     return True
 
