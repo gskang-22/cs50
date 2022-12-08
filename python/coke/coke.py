@@ -6,6 +6,7 @@ while cost > 0:
     if coin == "25" or coin == "10" or coin == "5":
         cost -= int(coin)
         print(f"Amount Due: {cost}")
-
+    else:
+        print(f"Amount Due: {cost}")
 
 print(f"Change owed: {-cost}")
