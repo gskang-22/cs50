@@ -10,13 +10,13 @@ while True:
         if x > y or y == 0:
             continue
 
-        fraction = (float(x) / y) * 100
-        if fraction > 99:
+        fraction = round((float(x) / y) * 100)
+        if fraction >= 99:
             print("F")
         elif fraction < 1:
             print("E")
         else:
-            print(f"{round(fraction, 2)}%")
+            print(f"{int(fraction)}%")
         break
     except ZeroDivisionError:
         continue
