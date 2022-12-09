@@ -16,7 +16,7 @@ while True:
         item = input("Item: ").title()
         if item in dict:
             cost += dict[item]
-            print(f"Total: ${cost}")
+            print(f"Total: ${cost:.2f}")
     except EOFError:
-        print("\n")
+        print("")
         break
