@@ -20,7 +20,6 @@ def main():
             if date[0].isdigit():
                 month, day, year = date.split("/")
                 if int(month) > 12 or int(day) > 31:
-                    print("1")
                     continue
 
                 print(f"{year}-{int(month):02}-{int(day):02}")
@@ -29,7 +28,6 @@ def main():
             else:
                 month, day, year = date.split(" ")
                 if month not in list or not year.isdigit():
-                    print("2")
                     continue
 
                 day_act = ""
@@ -37,11 +35,9 @@ def main():
                     if c.isdigit():
                         day_act += c
                 if "," not in day:
-                    print("3")
                     continue
 
                 if int(day_act) > 31:
-                    print("4")
                     continue
 
                 print(f"{year}-{get_month(month):02}-{int(day_act):02}")
@@ -51,7 +47,6 @@ def main():
             break
 
         except:
-            print("5")
             continue
 
 
