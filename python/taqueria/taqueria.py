@@ -18,4 +18,5 @@ while True:
             cost += dict[item]
             print(f"Total: ${cost}")
     except EOFError:
+        print("\n")
         break
