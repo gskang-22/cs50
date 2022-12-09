@@ -14,31 +14,35 @@ list = [
 ]
 def main():
     while True:
-        date = input("Date: ")
+        try:
+            date = input("Date: ")
 
-        if date[0].isdigit():
-            month, day, year = date.split("/")
-            if int(month) > 12 or int(day) > 31:
-                continue
+            if date[0].isdigit():
+                month, day, year = date.split("/")
+                if int(month) > 12 or int(day) > 31:
+                    continue
 
-            print(f"Date: {year}-{int(month):02}-{int(day):02}")
-            break
+                print(f"Date: {year}-{int(month):02}-{int(day):02}")
+                break
 
-        else:
-            month, day, year = date.split(" ")
-            if month not in list or not year.isdigit() or not day.isdigit():
-                continue
+            else:
+                month, day, year = date.split(" ")
+                if month not in list or not year.isdigit() or not day.isdigit():
+                    continue
 
-            day_act = ""
-            for c in day:
-                if c.isdigit():
-                    day_act += c
+                day_act = ""
+                for c in day:
+                    if c.isdigit():
+                        day_act += c
 
-            if int(day_act) > 31:
-                continue
+                if int(day_act) > 31:
+                    continue
 
-            print(f"Date: {year}-{get_month(month):02}-{int(day_act):02}")
-            break
+                print(f"Date: {year}-{get_month(month):02}-{int(day_act):02}")
+                break
+
+        except:
+            continue
 
 
 def get_month(month):
