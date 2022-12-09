@@ -15,6 +15,7 @@ while True:
             print("F")
         else:
             print(f"{int(fraction)}%")
+        break
     except ZeroDivisionError:
         print("E")
 
