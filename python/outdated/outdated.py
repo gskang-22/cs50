@@ -26,7 +26,7 @@ def main():
 
         else:
             month, day, year = date.split(" ")
-            if month not in list:
+            if month not in list or not year.isdigit() or not day.isdigit():
                 continue
 
             day_act = ""
