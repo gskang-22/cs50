@@ -12,6 +12,7 @@ list = [
     "November",
     "December"
 ]
+get_month()
 
 while True:
     date = input("Date: ")
@@ -21,7 +22,7 @@ while True:
         if int(month) > 12 or int(day) > 31:
             continue
 
-        print(f"{year}-{month:02}-{day:02}")
+        print(f"{year}-{int(month):02}-{int(day):02}")
         break
 
     else:
