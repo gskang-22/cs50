@@ -1,9 +1,10 @@
 while True:
     a = input("Fraction: ")
-    x, y = a.split("/")
+
 
 
     try:
+        x, y = a.split("/")
         x = int(x)
         y = int(y)
 
