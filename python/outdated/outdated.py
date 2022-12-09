@@ -46,6 +46,9 @@ def main():
         except:
             continue
 
+        except EOFError:
+            break
+
 
 def get_month(month):
     for i in range(len(list)):
