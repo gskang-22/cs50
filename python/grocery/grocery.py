@@ -10,7 +10,7 @@ while True:
             dict[item] = 1
 
     except EOFError:
-        for key in dict:
+        for key in sorted(dict):
             print(f"{dict[key]} {key}")
 
         break
