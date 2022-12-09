@@ -13,7 +13,7 @@ while True:
         fraction = round((float(x) / y) * 100)
         if fraction >= 99:
             print("F")
-        elif fraction < 1:
+        elif fraction <= 1:
             print("E")
         else:
             print(f"{int(fraction)}%")
