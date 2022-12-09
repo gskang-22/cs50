@@ -15,7 +15,7 @@ list = [
 def main():
     while True:
         try:
-            date = input("Date: ")
+            date = input("Date: ").strip()
 
             if date[0].isdigit():
                 month, day, year = date.split("/")
