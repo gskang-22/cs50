@@ -10,4 +10,7 @@ dict = {
     "Tortilla Salad": 8.00
 }
 
-x = input()
+cost = 0
+while True:
+    x = input("Item: ")
+    
