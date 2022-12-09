@@ -4,13 +4,13 @@ while True:
 
 
     try:
-        x = float(x)
-        y = float(y)
+        x = int(x)
+        y = int(y)
 
         if x > y or y == 0:
             continue
 
-        fraction = round((x / y), 2) * 100
+        fraction = round((float(x) / y), 2) * 100
         if fraction > 99:
             print("F")
         elif fraction < 1:
