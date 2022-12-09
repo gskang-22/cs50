@@ -37,11 +37,11 @@ while True:
         if int(day_act) > 31:
             continue
 
-        print(f"{year}-{get_month(month):02}-{day:02})
+        print(f"{year}-{get_month(month):02}-{day:02}")
         break
 
 
 def get_month(month):
     for i in range(len(list)):
-            if month == list[i]
+            if month == list[i]:
                 return i
