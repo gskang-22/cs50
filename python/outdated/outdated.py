@@ -28,7 +28,7 @@ def main():
 
             else:
                 month, day, year = date.split(" ")
-                if month not in list or not year.isdigit() or not day.isdigit():
+                if month not in list or not year.isdigit():
                     print("2")
                     continue
 
