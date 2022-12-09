@@ -2,7 +2,7 @@ dict = {}
 
 while True:
     try:
-        item = input("").upper
+        item = input("").upper()
 
         if item in dict:
             dict[item] += 1
