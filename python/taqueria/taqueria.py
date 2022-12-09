@@ -12,5 +12,10 @@ dict = {
 
 cost = 0
 while True:
-    x = input("Item: ")
-    
+    try:
+        item = input("Item: ").title()
+        if item in dict:
+            cost += dict[item]
+            print(f"Total: ${cost}")
+    except EOFError:
+        break
