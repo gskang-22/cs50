@@ -2,13 +2,17 @@ import random
 
 
 def main():
-    ...
+    try:
+
 
 
 def get_level():
-    level = input("Level: ")
-    if not level == "1" and not level == "2" and not level == "3":
-        
+    while True:
+        level = input("Level: ")
+        if level == "1" or level == "2" or level == "3":
+            return level
+        else:
+            continue
 
 
 def generate_integer(level):
