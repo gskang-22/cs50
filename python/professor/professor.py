@@ -12,13 +12,15 @@ def main():
                     x = generate_integer(level)
                     y = generate_integer(level)
                     answer = input(f"{x} + {y} = ")
+                    times = 0
 
-                    while True:
+                    for i in range(3):
                         if answer == str(x + y):
                             count += 1
                             break
                         else:
                             print("EEE")
+            print(f"Score: {count}")
 
         except ValueError:
             continue
