@@ -8,8 +8,8 @@ while True:
         continue
     break
 
+x = random.randint(1, int(level))
 while True:
-    x = random.randint(1, int(level))
 
     guess = input("Guess: ")
     if not guess.isdigit():
