@@ -2,12 +2,12 @@ import random
 
 
 def main():
-    try:
-        count = 0
-        level = get_level()
+    while True:
+        try:
+            count = 0
+            level = get_level()
 
-        for i in range(10):
-            try:
+            for i in range(10):
                 x = generate_integer(level)
                 y = generate_integer(level)
                 answer = input(f"{x} + {y} = ")
@@ -20,11 +20,11 @@ def main():
                     else:
                         print("EEE")
 
-    except ValueError:
-        continue
+        except ValueError:
+            continue
 
-    except:
-        print("something else")
+        except:
+            print("something else")
 
     print(f"Score: {count}")
 
