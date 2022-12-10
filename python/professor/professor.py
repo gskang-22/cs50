@@ -6,7 +6,8 @@ def main():
 
 
 def get_level():
-    ...
+    level = input("Level: ")
+    if not level == "1" and not level == "2" and not level == "3"
 
 
 def generate_integer(level):
