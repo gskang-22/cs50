@@ -7,4 +7,4 @@ while True:
     if int(level) <= 0:
         continue
 
-x = random.random
+x = random.random(1, int(level))
