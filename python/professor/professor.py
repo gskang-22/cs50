@@ -2,27 +2,26 @@ import random
 
 
 def main():
-    while True:
-        try:
-            count = 0
-            level = get_level()
+    try:
+        count = 0
+        level = get_level()
 
-            for i in range(10):
-                try:
-                    x = generate_integer(level)
-                    y = generate_integer(level)
-                    answer = input(f"{x} + {y} = ")
-                    times = 0
+        for i in range(10):
+            try:
+                x = generate_integer(level)
+                y = generate_integer(level)
+                answer = input(f"{x} + {y} = ")
+                times = 0
 
-                    for i in range(3):
-                        if answer == str(x + y):
-                            count += 1
-                            break
-                        else:
-                            print("EEE")
+                for i in range(3):
+                    if answer == str(x + y):
+                        count += 1
+                        break
+                    else:
+                        print("EEE")
 
-                 except ValueError:
-                    continue
+                except ValueError:
+                continue
 
     print(f"Score: {count}")
 
