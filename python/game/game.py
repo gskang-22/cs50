@@ -7,7 +7,7 @@ while True:
     if int(level) <= 0:
         continue
 
-    x = random.random(1, int(level))
+    x = random.randint(1, int(level))
 
     guess = input("Guess: ")
     if not guess.isdigit():
