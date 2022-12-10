@@ -20,8 +20,11 @@ def main():
                     else:
                         print("EEE")
 
-                except ValueError:
-                continue
+    except ValueError:
+        continue
+
+    except:
+        print("something else")
 
     print(f"Score: {count}")
 
