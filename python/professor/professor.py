@@ -10,23 +10,25 @@ def main():
             for i in range(10):
                 x = generate_integer(level)
                 y = generate_integer(level)
-                answer = input(f"{x} + {y} = ")
                 times = 0
 
                 for i in range(3):
+                    answer = input(f"{x} + {y} = ")
                     if answer == str(x + y):
                         count += 1
                         break
                     else:
                         print("EEE")
+            print(f"Score: {count}")
+            break
 
         except ValueError:
             continue
 
-        except:
-            print("something else")
+        except EOFError:
+            break
 
-    print(f"Score: {count}")
+
 
 
 
