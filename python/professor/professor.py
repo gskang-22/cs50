@@ -14,11 +14,17 @@ def main():
 
                 for i in range(3):
                     answer = input(f"{x} + {y} = ")
+
                     if answer == str(x + y):
                         count += 1
                         break
                     else:
                         print("EEE")
+                        times += 1
+
+                    if times == 3:
+                        print(f"{x} + {y} = {x + y}")
+
             print(f"Score: {count}")
             break
 
