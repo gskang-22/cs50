@@ -9,5 +9,11 @@ if len(sys.argv) != 3:
 elif sys.argv[1] != "-f" or sys.argv[1] != "--font":
     sys.exit("Invalid Usage")
 
+f = sys.argv[2]
+if f not in list:
+    sys.exit("Invalid Usage")
+else:
+    figlet.setFont(font=f)
+
 x = input("Input: ")
 print(figlet.renderText(x))
