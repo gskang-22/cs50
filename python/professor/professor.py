@@ -5,15 +5,18 @@ def main():
     count = 0
     level = get_level()
 
-    while True:
+    for i in range(10):
         try:
             x = generate_integer(level)
             y = generate_integer(level)
             answer = input(f"{x} + {y} = ")
-            if answer == str(x + y):
-                count += 1
-            else:
-                print("EEE")
+
+            while True:
+                if answer == str(x + y):
+                    count += 1
+                    break
+                else:
+                    print("EEE")
 
 
 
