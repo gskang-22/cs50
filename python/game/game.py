@@ -6,7 +6,9 @@ while True:
         continue
     if int(level) <= 0:
         continue
+    break
 
+while True:
     x = random.randint(1, int(level))
 
     guess = input("Guess: ")
