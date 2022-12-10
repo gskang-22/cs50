@@ -2,21 +2,26 @@ import random
 
 
 def main():
-    count = 0
-    level = get_level()
-
-    for i in range(10):
+    while True:
         try:
-            x = generate_integer(level)
-            y = generate_integer(level)
-            answer = input(f"{x} + {y} = ")
+            count = 0
+            level = get_level()
 
-            while True:
-                if answer == str(x + y):
-                    count += 1
-                    break
-                else:
-                    print("EEE")
+            for i in range(10):
+                try:
+                    x = generate_integer(level)
+                    y = generate_integer(level)
+                    answer = input(f"{x} + {y} = ")
+
+                    while True:
+                        if answer == str(x + y):
+                            count += 1
+                            break
+                        else:
+                            print("EEE")
+
+        except ValueError:
+            continue
 
 
 
