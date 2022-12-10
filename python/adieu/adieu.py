@@ -8,6 +8,5 @@ while True:
         list.append(x)
 
     except EOFError:
-        
-        print(f"Adieu, adieu, to {}")
+        print(f"\nAdieu, adieu, to {p.join(list)}")
         break
