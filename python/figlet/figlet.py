@@ -1,3 +1,5 @@
- from pyfiglet import Figlet
- figlet = Figlet()
- list = figlet.getFonts()
+from pyfiglet import Figlet
+
+figlet = Figlet()
+list = figlet.getFonts()
+print(list)
