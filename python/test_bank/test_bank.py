@@ -7,4 +7,4 @@ def test_20():
     assert value("how are you?")
 
 def test_100():
-    assert value(")
+    assert value("asdf")
