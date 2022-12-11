@@ -9,7 +9,7 @@ def shorten(word):
     for char in word:
         if char != "a" and char != "e" and char != "i" and char != "o" and char != "u":
             word_new += char
-            return word_new
+    return word_new
 
 
 if __name__ == "__main__":
