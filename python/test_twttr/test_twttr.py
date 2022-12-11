@@ -2,4 +2,4 @@ from twttr import shorten
 
 def test_twttr:
     assert shorten("hello") == "hll"
-    assert 
+    assert shorten("testing this test") == "tstng ths tst"
