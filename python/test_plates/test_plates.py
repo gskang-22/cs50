@@ -16,4 +16,4 @@ def test_true():
     assert is_valid("CS50") == True
 
 def test_first():
-    assert is_valid("A123P") == False
+    assert is_valid("A123") == False
