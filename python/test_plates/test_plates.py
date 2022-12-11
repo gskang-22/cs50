@@ -14,3 +14,6 @@ def test_no_special():
 
 def test_true():
     assert is_valid("CS50") == True
+
+def test_first():
+    assert is_valid("123P") == False
