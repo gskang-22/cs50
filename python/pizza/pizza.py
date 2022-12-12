@@ -10,7 +10,7 @@ def main():
             sys.exit("Not a CSV file")
 
         with open(sys.argv, "r") as file:
-            
+
 
     except FileNotFoundError:
         sys.exit("File does not exist")
