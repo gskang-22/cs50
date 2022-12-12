@@ -7,6 +7,8 @@ def main():
             print("Missing command-line argument")
         n = float(sys.argv[1])
 
+        print(f"${amount:,.4f}")
+
     except requests.RequestException:
         ...
     except ValueError:
