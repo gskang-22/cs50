@@ -16,7 +16,7 @@ def main():
             reader = csv.reader(file)
             for row in reader:
                 table.append(row)
-        print(tabulate(table, headers="firstrow"))
+        print(tabulate(table, headers="firstrow", tablefmt="grid"))
 
 
     except FileNotFoundError:
