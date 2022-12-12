@@ -6,6 +6,8 @@ def main():
         if len(sys.argv) < 2:
             print("Missing command-line argument")
         n = float(sys.argv[1])
+        r = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+        r.json()
 
         print(f"${amount:,.4f}")
 
