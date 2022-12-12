@@ -1,14 +1,19 @@
 import sys
 
 def main():
+    count = 0
     try:
         if len(sys.argv) < 2:
             sys.exit("Too few command-line arguments")
         elif len(sys.argv) > 2
             sys.exit("Too many command-line arguments")
+        elif sys.argv[:]
 
         with open(sys.argv[1], "r") as file:
-            
+            for line in file:
+                if line.startswith("#"):
+                    continue
+                elif line ==
 
 
     except FileNotFoundError:
