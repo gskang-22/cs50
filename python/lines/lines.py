@@ -5,7 +5,7 @@ def main():
     try:
         if len(sys.argv) < 2:
             sys.exit("Too few command-line arguments")
-        elif len(sys.argv) > 2
+        elif len(sys.argv) > 2:
             sys.exit("Too many command-line arguments")
         elif sys.argv[-3:] != ".py":
             sys.exit("Not a Python file")
@@ -16,7 +16,9 @@ def main():
                     continue
                 elif line.lstrip() == "":
                     continue
-                
+                else:
+                    count += 1
+        print(count)
 
 
     except FileNotFoundError:
