@@ -9,8 +9,12 @@ def main():
         elif len(sys.argv) < 3:
             sys.exit("Too many command-line arguments")
 
-        with open(sys.argv[1], "r") as file1:
+        with open(sys.argv[1], "r") as file1, open(sys.argv[2], "w") as file2:
             csv1 = csv.reader(file1)
+            csv2 = csv.writer(file2)
+
+            csv2.writerow([first, last, house])
+
             for row in csv1:
                 full_name = row[0]
                 house = row[1]
@@ -24,9 +28,6 @@ def main():
                 temp.append(last.strip())
                 temp.append(house)
                 list.append(temp)
-
-        with open(sys.argv[2], "w") as file2:
-            
 
 
     except FileNotFoundError:
