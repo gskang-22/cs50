@@ -28,7 +28,6 @@ def convert(fraction):
         raise ZeroDivisionError
     elif x > y:
         raise ValueError
-
     return round((x / y) * 100)
 
 
