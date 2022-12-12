@@ -1,4 +1,5 @@
 import csv
+from tabulate import tabulate
 
 def main():
     try:
@@ -10,7 +11,9 @@ def main():
             sys.exit("Not a CSV file")
 
         with open(sys.argv, "r") as file:
-            file = file.DictReader()
+            csv = file.reader()
+        print(tabulate(csv, headers="firstrow"))
+
 
     except FileNotFoundError:
         sys.exit("File does not exist")
