@@ -2,7 +2,6 @@ import csv
 import sys
 
 def main():
-    list = []
     try:
         if len(sys.argv) > 3:
             sys.exit("Too few command-line arguments")
@@ -13,7 +12,7 @@ def main():
             csv1 = csv.reader(file1)
             csv2 = csv.writer(file2)
 
-            csv2.writerow([first, last, house])
+            csv2.writerow(["first", "last", "house"])
 
             for row in csv1:
                 full_name = row[0]
@@ -27,8 +26,9 @@ def main():
                 temp.append(first.strip())
                 temp.append(last.strip())
                 temp.append(house)
-                list.append(temp)
 
+                csv2.writerow(temp)
+                
 
     except FileNotFoundError:
         sys.exit(f"could not read{argv[1]}")
