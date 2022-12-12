@@ -7,7 +7,10 @@ def main():
             print("Missing command-line argument")
         n = float(sys.argv[1])
         r = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-        r.json()
+        o = r.json()
+
+        rate_Float = o["bpi"]["USD"]['rate_float']
+        amount = rate_Float * n
 
         print(f"${amount:,.4f}")
 
