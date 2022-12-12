@@ -14,7 +14,9 @@ def main():
             for line in file:
                 if line.lstrip().startswith("#"):
                     continue
-                elif line ==
+                elif line.lstrip() == "":
+                    continue
+                
 
 
     except FileNotFoundError:
