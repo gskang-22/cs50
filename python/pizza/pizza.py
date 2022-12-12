@@ -3,6 +3,7 @@ from tabulate import tabulate
 import sys
 
 def main():
+    table = []
     try:
         if len(sys.argv) < 2:
             sys.exit("Too few command-line arguments")
@@ -13,7 +14,9 @@ def main():
 
         with open(sys.argv[1], "r") as file:
             reader = csv.reader(file)
-        print(tabulate(reader, headers="firstrow"))
+            for row in reader:
+                table.append(row)
+        print(tabulate(table, headers="firstrow"))
 
 
     except FileNotFoundError:
