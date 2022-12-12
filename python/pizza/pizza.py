@@ -1,0 +1,17 @@
+import csv
+
+def main():
+    try:
+        if len(sys.argv) < 2:
+            sys.exit("Too few command-line arguments")
+        elif len(sys.argv) > 2:
+            sys.exit("Too many command-line arguments")
+
+        with open(sys.argv, "r") as file:
+
+    except FileNotFoundError:
+        sys.exit("File does not exist")
+
+
+if __name__ == "__main__":
+    main
