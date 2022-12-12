@@ -11,7 +11,12 @@ def main():
         with open(sys.argv[1], "r") as file1, open(sys.argv[2], "w") as file2:
             csv1 = csv.reader(file1)
             for row in csv1:
-                name = row[0]
+                full_name = row[0]
+                if full_name == "name":
+                    continue
+
+                last, name = full_name.split(",")
+                
 
 
     except FileNotFoundError:
