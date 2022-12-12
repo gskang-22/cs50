@@ -15,6 +15,7 @@ def main():
                 if full_name == "name":
                     continue
 
+                temp = []
                 last, name = full_name.split(",")
                 
 
