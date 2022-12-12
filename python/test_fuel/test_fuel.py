@@ -8,6 +8,9 @@ def test_convert():
     with pytest.raises(ZeroDivisionError):
         convert("10 / 0")
 
+    with pytest.raises(ValueError):
+        convert("3 / 2")
+
 def test_gauge():
     assert gauge(1) == "E"
     assert gauge(50) == "50%"

@@ -24,10 +24,10 @@ def convert(fraction):
 
     x = float(x)
     y = float(y)
-    if x > y:
-        raise ValueError
-    elif y == 0:
+    if y == 0:
         raise ZeroDivisionError
+    elif x > y:
+        raise ValueError
 
     return round((x / y) * 100)
 
