@@ -11,7 +11,7 @@ def main():
         elif sys.argv[1][-4:] != ".csv":
             sys.exit("Not a CSV file")
 
-        with open(sys.argv, "r") as file:
+        with open(sys.argv[1], "r") as file:
             reader = csv.reader(file)
         print(tabulate(reader, headers="firstrow"))
 
