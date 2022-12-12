@@ -12,8 +12,8 @@ def main():
             sys.exit("Not a CSV file")
 
         with open(sys.argv, "r") as file:
-            csv = file.reader()
-        print(tabulate(csv, headers="firstrow"))
+            reader = csv.reader(file)
+        print(tabulate(reader, headers="firstrow"))
 
 
     except FileNotFoundError:
