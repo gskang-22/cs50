@@ -12,7 +12,7 @@ def main():
 
         with open(sys.argv[1], "r") as file:
             for line in file:
-                if line.startswith("#"):
+                if line.lstrip().startswith("#"):
                     continue
                 elif line ==
 
