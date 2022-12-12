@@ -16,11 +16,14 @@ def main():
 
 def convert(fraction):
     x, y = fraction.split("/")
+    x = x.strip()
+    y = y.strip()
     if not x.isdigit() or not y.isdigit():
         raise ValueError
 
-    x = float(x.strip())
-    y = float(y.strip())
+
+    x = float(x)
+    y = float(y)
     if x > y:
         raise ValueError
     elif y == 0:
