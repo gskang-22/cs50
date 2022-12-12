@@ -9,8 +9,10 @@ def main():
             sys.exit("Too many command-line arguments")
 
         with open(sys.argv[1], "r") as file1, open(sys.argv[2], "w") as file2:
-            for row in file1:
+            csv1 = csv.reader(file1)
+            for row in csv1:
                 
+
 
     except FileNotFoundError:
         sys.exit(f"could not read{argv[1]}")
