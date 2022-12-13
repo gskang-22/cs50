@@ -11,7 +11,16 @@ def main():
         root1, ext1 = os.path.splitext(sys.argv[1])
         root2, ext2 = os.path.splitext(sys.argv[2])
 
-        
+        if not check_ext(ext1) and check_ext(ext2):
+
+
+
+def check_ext(ext):
+    ext = ext.lower()
+    if ext == ".jpg" or ext == ".jpeg" or ext == ".png":
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     main()
