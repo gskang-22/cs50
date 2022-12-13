@@ -7,7 +7,11 @@ def main():
             sys.exit("Too many command-line arguments")
         elif len(sys.argv) < 2:
             sys.exit("Too few command-line arguments")
-        root, ext = os.path.splitext(sys.argv[1])
+
+        root1, ext1 = os.path.splitext(sys.argv[1])
+        root2, ext2 = os.path.splitext(sys.argv[2])
+
+        
 
 if __name__ == "__main__":
     main()
