@@ -16,6 +16,15 @@ def main():
         elif ext1 != ext2:
             sys.exit("Input and output have different extensions")
 
+        shirt = Image.open("shirt.png")
+        muppetPic = Image.open(sys.argv[1])
+
+        muppetCropped = ImageOps.fit(muppetPic, shirt.size, Image.Resampling.BICUBIC, bleed=0.0, centering=(0.5, 0.5))
+
+        muppetCropped.paste(shirt, box=None, mask=shirt)
+
+        muppetCropped.save(sys.argv[2]
+
 
 
 def check_ext(ext):
