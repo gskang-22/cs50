@@ -17,13 +17,13 @@ def main():
             sys.exit("Input and output have different extensions")
 
         shirt = Image.open("shirt.png")
-        muppetPic = Image.open(sys.argv[1])
+        muppet = Image.open(sys.argv[1])
 
-        muppetCropped = ImageOps.fit(muppetPic, shirt.size, Image.Resampling.BICUBIC, bleed=0.0, centering=(0.5, 0.5))
+        cropped = ImageOps.fit(muppet, shirt.size, Image.Resampling.BICUBIC, bleed=0.0, centering=(0.5, 0.5))
 
-        muppetCropped.paste(shirt, box=None, mask=shirt)
+        cropped.paste(shirt, box=None, mask=shirt)
 
-        muppetCropped.save(sys.argv[2]
+        cropped.save(sys.argv[2])
 
 
 
