@@ -13,6 +13,8 @@ def main():
 
         if not check_ext(ext1) and not check_ext(ext2):
             sys.exit("")
+        elif ext1 != ext2:
+            sys.exit("Input and output have different extensions")
 
 
 
