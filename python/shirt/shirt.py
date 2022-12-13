@@ -11,8 +11,10 @@ def main():
         root1, ext1 = os.path.splitext(sys.argv[1])
         root2, ext2 = os.path.splitext(sys.argv[2])
 
-        if not check_ext(ext1) and not check_ext(ext2):
-            sys.exit("")
+        if not check_ext(ext1):
+            sys.exit("Invalid input")
+        elif not check_ext(ext2):
+            sys.exit("Invalid output")
         elif ext1 != ext2:
             sys.exit("Input and output have different extensions")
 
@@ -24,6 +26,9 @@ def main():
         cropped.paste(shirt, box=None, mask=shirt)
 
         cropped.save(sys.argv[2])
+
+    except FileNotFoundError:
+        sys.exit("Input does not exist")
 
 
 
