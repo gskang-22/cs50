@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    list = re.findall(r"\b(um)", s, re.IGNORECASE)
+    list = re.findall("\b(um)", s, re.IGNORECASE)
     print(list)
 
 
