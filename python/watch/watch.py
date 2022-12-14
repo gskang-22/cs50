@@ -7,7 +7,7 @@ def main():
 
 
 def parse(s):
-    rul = re.search(r'^.* src="(https?://(www\.)?youtube\.com/(?:embed/).*)".*)
+    rul = re.search(r'^.* src="(https?://(www\.)?youtube\.com/embed/.*)".*)
 
 
 ...
