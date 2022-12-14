@@ -18,7 +18,7 @@ def check(time, at):
     if at == "AM":
         if ":" in time:
             a, b = time.split(":")
-            if int(a) > 12:
+            if int(a) > 12 or int(b) > 59:
                 raise ValueError
             return f"{int(a):{'0'}{'2'}}:{b}"
         else:
@@ -29,7 +29,7 @@ def check(time, at):
     elif at == "PM":
         if ":" in time:
             a, b = time.split(":")
-            if int(a) > 12:
+            if int(a) > 12 or int(b) > 59:
                 raise ValueError
             return f"{(int(a) + 12):{'0'}{'2'}}:{b}"
         else:
