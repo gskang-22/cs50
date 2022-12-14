@@ -18,7 +18,8 @@ def convert(s):
 def check(time, at):
     if at == "AM":
         if ":" in time:
-            return 
+            a, b = at.split(":")
+            return f"{a}:{b}"
         else:
 
     elif at == "PM":
