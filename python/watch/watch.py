@@ -7,7 +7,7 @@ def main():
 
 
 def parse(s):
-    ...
+    rul = re.search(r'^.* src=")
 
 
 ...
