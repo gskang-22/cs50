@@ -19,14 +19,16 @@ def check(time, at):
     if at == "AM":
         if ":" in time:
             a, b = at.split(":")
-            return f"{a}:{b}"
+            return f"{a:2f}:{b}"
         else:
+            return f"{at:2f}:00"
 
     elif at == "PM":
         if ":" in time:
-
+            a, b = at.split(":")
+            return f"{(int(a) + 12):2f}:{b}"
         else:
-
+            f"{(int(at) + 12):2f}:00"
 
 
 if __name__ == "__main__":
