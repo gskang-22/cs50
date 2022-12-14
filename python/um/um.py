@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    re.search(")
+    list = re.findall("\bum\b", s, re.IGNORECASE)
 
 
 ...
