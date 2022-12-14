@@ -39,6 +39,8 @@ def check(time, at):
             if int(time) > 12:
                 raise ValueError
             return f"{(int(time) + 12):{'0'}{'2'}}:00"
+    else:
+        raise ValueError
 
 
 if __name__ == "__main__":

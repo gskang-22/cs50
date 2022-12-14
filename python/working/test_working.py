@@ -17,4 +17,4 @@ def test_wrong_word():
     with pytest.raises(ValueError):
         convert("9 AM - 5 PM")
     with pytest.raises(ValueError):
-        convert("asdf")
+        convert("10:30 am to 8:50 am")
