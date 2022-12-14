@@ -7,11 +7,14 @@ def main():
 
 
 def convert(s):
-    group = re.search("^([0-9:]+) ([A-Z]+) to ([0-9:]+) ([A-Z]+)$", s.strip())
-    time1, at1, time2, at2 = group.groups()
-    time1 = check(time1, at1)
-    time2 = check(time2, at2)
-    return f"{time1} to {time2}"
+    try:
+        group = re.search("^([0-9:]+) ([A-Z]+) to ([0-9:]+) ([A-Z]+)$", s.strip())
+        time1, at1, time2, at2 = group.groups()
+        time1 = check(time1, at1)
+        time2 = check(time2, at2)
+        return f"{time1} to {time2}"
+    except:
+        raise ValueError
 
 
 def check(time, at):
