@@ -8,7 +8,8 @@ def main():
 
 def parse(s):
     url = re.search(r'^.*src="(https?://(www\.)?youtube\.com/embed/[\w]+).*', s)
-    shorten = re.sub("", "")
+    shorten = re.sub("embed/", "", url.group(1))
+    return shorten
 
 
 if __name__ == "__main__":
