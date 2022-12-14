@@ -18,14 +18,14 @@ def convert(s):
 def check(time, at):
     if at == "AM":
         if ":" in time:
-
+            return 
         else:
 
     elif at == "PM":
         if ":" in time:
 
         else:
-            
+
 
 
 if __name__ == "__main__":
