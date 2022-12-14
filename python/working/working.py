@@ -40,7 +40,7 @@ def check(time, at):
                 raise ValueError
             return f"{(int(time) + 12):{'0'}{'2'}}:00"
     else:
-        raise ValueError
+        raise ValueErrord
 
 
 if __name__ == "__main__":
