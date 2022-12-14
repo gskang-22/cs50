@@ -8,7 +8,7 @@ def main():
 
 def convert(s):
     try:
-        
+        re.search("^(..:..).*(..:..)$")
 
 
 ...
