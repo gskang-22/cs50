@@ -8,4 +8,5 @@ def test_1():
 def test_2():
     assert count("Um, thanks, um...") == 2
 
-def test_
+def test_in_word():
+    assert count("Um, thanks for the album.") == 1
