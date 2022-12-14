@@ -3,14 +3,17 @@ import sys
 
 
 def main():
-    print(validate(input("IPv4 Address: ")).strip())
+    print(validate(input("IPv4 Address: ").strip()))
 
 
 def validate(ip):
-    a, b, c, d = ip.split(".")
-    if check(a) and check(b) and check(c) and check(d):
-        return True
-    else:
+    try:
+        a, b, c, d = ip.split(".")
+        if check(a) and check(b) and check(c) and check(d):
+            return True
+        else:
+            return False
+    except:
         return False
 
 
