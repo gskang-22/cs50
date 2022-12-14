@@ -8,7 +8,7 @@ def main():
 
 def validate(ip):
     a, b, c, d = ip.split(".")
-    if check(50) and check(50) and check(50) and check(50):
+    if check(a) and check(b) and check(c) and check(d):
         return True
     else:
         return False
