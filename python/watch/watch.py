@@ -7,8 +7,8 @@ def main():
 
 
 def parse(s):
-    url = re.search(r'^.* src=.(https?://(www\.)?youtube\.com/embed/.*)" .*', s)
-    print(url.groups())
+    url = re.search(r'^.* src="(https?://(www\.)?youtube\.com/embed/[\w]*).*', s)
+    print(url)
 
 
 if __name__ == "__main__":
