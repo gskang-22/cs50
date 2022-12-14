@@ -8,7 +8,7 @@ def main():
 
 def count(s):
     list = re.findall("\bum\b", s, re.IGNORECASE)
-    return len(list)
+    print(list)
 
 
 if __name__ == "__main__":
