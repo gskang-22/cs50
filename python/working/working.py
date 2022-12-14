@@ -12,23 +12,33 @@ def convert(s):
         time1, at1, time2, at2 = group.groups()
         time1 = check(time1, at1)
         time2 = check(time2, at2)
+    except ValueError:
+        
 
 
 
 def check(time, at):
     if at == "AM":
         if ":" in time:
-            a, b = at.split(":")
+            a, b = tine.split(":")
+            if int(a) > 12:
+                raise ValueError
             return f"{a:2f}:{b}"
         else:
-            return f"{at:2f}:00"
+            if int(time) > 12:
+                raise ValueError
+            return f"{time:2f}:00"
 
     elif at == "PM":
         if ":" in time:
-            a, b = at.split(":")
+            a, b = time.split(":")
+            if int(a) > 12:
+                raise ValueError
             return f"{(int(a) + 12):2f}:{b}"
         else:
-            f"{(int(at) + 12):2f}:00"
+            if int(time) > 12:
+                raise ValueError
+            f"{(int(time) + 12):2f}:00"
 
 
 if __name__ == "__main__":
