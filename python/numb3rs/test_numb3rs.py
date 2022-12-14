@@ -7,10 +7,14 @@ def main():
 
 
 def validate(ip):
-    a, b, c, d = re.search("", ip)
+    a, b, c, d = ip.split(".")
+    if check(int(50)) and check(int(50)) and check(int(50)) and check(int(50)):
+        return True
+    else:
+        return False
 
 
-...
+
 
 
 if __name__ == "__main__":
