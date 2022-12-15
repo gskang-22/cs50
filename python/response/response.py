@@ -1,10 +1,10 @@
-from validator_collection import validators
+import validators
 
 def main():
     print(validate(input("What's your email address? ")))
 
 def validate(s):
-    if is_email(s):
+    if validators.email(s):
         return "Valid"
     else:
         return "Invalid"
