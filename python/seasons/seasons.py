@@ -14,7 +14,8 @@ def convert(s):
         if not isdigit(a) and not isdigit(b) and not isdigit(c):
             raise ValueError
 
-        if 
+        if int(b) > 12 or int(c) > 31:
+            raise ValueError:
 
 
 if __name__ == "__main__":
