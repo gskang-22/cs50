@@ -21,16 +21,16 @@ def test_str():
 
 def test_deposit():
     jar = Jar()
-    assert jar.size() == 0
+    assert jar.size == 0
     jar.deposit(1)
-    assert jar.size() == 2
+    assert jar.size == 1
     jar.deposit(11)
-    assert jar.size() == 12
+    assert jar.size == 12
 
 
 def test_withdraw():
     jar = Jar()
     jar.deposit(20)
-    assert jar.size() == 20
+    assert jar.size == 20
     jar.withdraw(11)
-    assert jar.size() == 9
+    assert jar.size == 9
