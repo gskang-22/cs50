@@ -27,7 +27,8 @@ def convert(s):
             raise ValueError
 
         time_in_min = round((time.days * 24 * 60) + (time.seconds / 60.0))
-        return (f"{p.number_to_words(time_in_min)} minutes").capitalize()
+        string = (f"{p.number_to_words(time_in_min)} minutes").capitalize()
+        return string.replace("and ", "")
 
     except ValueError:
         sys.exit("Invalid date")
