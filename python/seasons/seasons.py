@@ -1,5 +1,6 @@
-from datetime import date
+from datetime import date, timedelta
 import inflect
+import sys
 
 
 def main():
@@ -15,7 +16,12 @@ def convert(s):
             raise ValueError
 
         if int(b) > 12 or int(c) > 31:
-            raise ValueError:
+            raise ValueError
+
+        date_birth = timedelta()
+
+    except:
+        sys.exit("Invalid date")
 
 
 if __name__ == "__main__":
