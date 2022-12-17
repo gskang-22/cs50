@@ -1,6 +1,8 @@
 class Jar:
     def __init__(self, capacity=12):
-        self.capacity = capacity
+        if capacity < 0:
+            raise ValueError
+        self._capacity = capacity
 
     def __str__(self):
         ...
@@ -17,4 +19,3 @@ class Jar:
 
     @property
     def size(self):
-        
