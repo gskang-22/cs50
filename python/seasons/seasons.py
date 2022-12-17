@@ -22,6 +22,9 @@ def convert(s):
 
         time = date_today - date_birth
 
+        if time.days < 0:
+            raise ValueError
+
     except:
         sys.exit("Invalid date")
 
