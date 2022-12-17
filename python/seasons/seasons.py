@@ -10,6 +10,7 @@ def main():
 
 def convert(s):
     date_today = date.today()
+    p = inflect.engine()
     try:
         a, b, c = s.strip().split("-")
         if not isdigit(a) and not isdigit(b) and not isdigit(c):
@@ -24,6 +25,8 @@ def convert(s):
 
         if time.days < 0:
             raise ValueError
+
+        return f"
 
     except:
         sys.exit("Invalid date")
