@@ -6,8 +6,6 @@ def test_init():
     jar = Jar()
     assert jar.size == 0
     assert jar.capacity == 12
-    with pytest.raises(ValueError):
-        jar2 = Jar(-1)
 
 
 def test_str():
@@ -24,13 +22,15 @@ def test_deposit():
     assert jar.size == 0
     jar.deposit(1)
     assert jar.size == 1
-    jar.deposit(11)
-    assert jar.size == 12
+    with pytest.raises(ValueError):
+        jar.deposit(12)
 
 
 def test_withdraw():
     jar = Jar()
-    jar.deposit(20)
-    assert jar.size == 20
-    jar.withdraw(11)
-    assert jar.size == 9
+    jar.deposit(11)
+    assert jar.size == 11
+    jar.withdraw(9)
+    assert jar.size == 2
+    with pytest.raises(ValueError):
+        jar.withdraw(3)

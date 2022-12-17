@@ -20,7 +20,7 @@ class Jar:
         if temp < 0:
             raise ValueError
         else:
-            self._size = n
+            self._size = temp
 
     @property
     def capacity(self):
