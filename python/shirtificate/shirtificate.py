@@ -11,4 +11,4 @@ if __name__ == "__main__":
 
 class PDF(FPDF):
     def header(self):
-        self.image
+        self.image("shirtificate.png", 10, 65, 190, 190)
