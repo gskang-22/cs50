@@ -13,21 +13,21 @@ def convert(s):
     p = inflect.engine()
     try:
         a, b, c = s.strip().split("-")
-        if not isdigit(a) and not isdigit(b) and not isdigit(c):
+        if not a.isdigit() and not b.isdigit() and not c.isdigit():
             raise ValueError
 
         if int(b) > 12 or int(c) > 31:
             raise ValueError
 
-        date_birth = datetime.date(a, b, c)
+        date_birth = date(int(a), int(b), int(c))
 
         time = date_today - date_birth
 
         if time.days < 0:
             raise ValueError
 
-        time_in_min = (time.days * 24 * 60) + (time.seconds / 60.0)
-        return (f"{round(time_in_min)}").capitalize()
+        time_in_min = round((time.days * 24 * 60) + (time.seconds / 60.0))
+        return (f"{p.number_to_words(time_in_min)}").capitalize()
 
     except ValueError:
         sys.exit("Invalid date")
