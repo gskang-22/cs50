@@ -2,7 +2,7 @@ from fpdf import FPDF
 
 def main():
     name = input("Name: ")
-    pdf = PDF(orientation="P", unit="mm", format="A4")
+    pdf = PDF()
     pdf.add_page()
     pdf.output("shirtificate.pdf")
 
