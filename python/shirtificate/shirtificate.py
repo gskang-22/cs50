@@ -8,3 +8,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+class PDF(FPDF):
+    def header(self):
+        self.image
