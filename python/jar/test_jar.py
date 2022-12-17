@@ -1,4 +1,5 @@
 from jar import Jar
+import pytest
 
 
 def test_init():
