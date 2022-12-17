@@ -26,7 +26,8 @@ def convert(s):
         if time.days < 0:
             raise ValueError
 
-        return f"
+        time_in_min = (time.days * 24 * 60) + (time.seconds / 60.0)
+        return (f"{round(time_in_min)}").capitalize()
 
     except:
         sys.exit("Invalid date")
