@@ -13,7 +13,7 @@ class Jar:
         if temp > self._capacity:
             raise ValueError
         else:
-            self._size = temp
+            self._size += n
 
     def withdraw(self, n):
         temp = self.size - n
