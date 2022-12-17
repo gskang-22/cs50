@@ -18,7 +18,9 @@ def convert(s):
         if int(b) > 12 or int(c) > 31:
             raise ValueError
 
-        date_birth = timedelta()
+        date_birth = datetime.date(a, b, c)
+
+        time = date_today - date_birth
 
     except:
         sys.exit("Invalid date")
