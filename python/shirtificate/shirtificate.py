@@ -3,12 +3,20 @@ from fpdf import FPDF
 def main():
     pdf = FPDF(orientation="P", unit="mm", format="A4")
     pdf.add_page()
-    pdf.set_font("helvetica", "B", 16)
-    pdf.cell(60, 10, 'CS50 Shirtificate', align='C')
+    pdf.output("shirtificate.pdf")
 
-if __name__ == "__main__":
-    main()
 
 class PDF(FPDF):
     def header(self):
         self.image("shirtificate.png", 10, 65, 190, 190)
+        self.set_font("helvetica", "B", 45)
+        self.cell(45, 45, "CS50 Shirtificate", align='C')
+
+    def footer(self):
+        self.set_font("helvetica", "B", 25)
+        self.set_text_color(255,255,255)
+        self.cell(72, 140, name + " took CS50", align='C')
+
+
+if __name__ == "__main__":
+    main()
