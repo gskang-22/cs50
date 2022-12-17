@@ -1,10 +1,7 @@
 from fpdf import FPDF
 
-def main():
-    name = input("Name: ")
-    pdf = PDF()
-    pdf.add_page()
-    pdf.output("shirtificate.pdf")
+
+
 
 
 class PDF(FPDF):
@@ -18,6 +15,7 @@ class PDF(FPDF):
         self.set_text_color(255,255,255)
         self.cell(72, 140, name + " took CS50", align='C')
 
-
-if __name__ == "__main__":
-    main()
+name = input("Name: ")
+pdf = PDF()
+pdf.add_page()
+pdf.output("shirtificate.pdf")
