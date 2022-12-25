@@ -2,5 +2,8 @@
     "gitdoc.enabled": true,
     "files.associations": {
         "cstddef": "c"
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html"
     }
 }
