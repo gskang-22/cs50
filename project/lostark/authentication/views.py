@@ -12,6 +12,7 @@ class UsernameValidationView(View):
 
         if str(username).isalnum():
             return JsonResponse({'username_error': 'username contains non-alphanumeric characters'}, status=400)
+        return JsonResponse({'username_valid': True})
 
 class RegistrationView(View):
     def get(self, request):
