@@ -28,6 +28,9 @@ emailField.addEventListener('keyup', (event) => {
             }
         });
     }
+    if (emailVal.length = 0) {
+        emailSuccessOutput.style.display = 'none';
+    }
 })
 
 
@@ -54,5 +57,9 @@ usernameField.addEventListener('keyup', (event) => {
                 feedbackArea.innerHTML = `<p>${data.username_error}</p>`
             }
         });
+    }
+
+    if (usernameVal.length = 0) {
+        usernameSuccessOutput.style.display = 'none';
     }
 });
