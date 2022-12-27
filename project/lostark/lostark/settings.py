@@ -132,5 +132,12 @@ MESSAGE_TAGS = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    https://*.example.com
+    'http://localhost:8000'
+]
+
+ALLOWED_HOSTS = [
+    'localhost'
+]
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8000'
 ]
