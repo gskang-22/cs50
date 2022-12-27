@@ -130,7 +130,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
-
 CSRF_TRUSTED_ORIGINS = [
-    'http://lostark/authentication/register'
+    'http://localhost:8000'
+],
+ALLOWED_HOSTS = [
+    'localhost',
+],
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8000',
 ]
