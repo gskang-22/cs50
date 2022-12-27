@@ -16,6 +16,7 @@ class EmailValidationView(View):
             return JsonResponse({'email_error': 'Email is invalid'}, status=400)
         if User.objects.filter(email=email).exists():
             return JsonResponse({'email_error': 'Email already taken'}, status=409)
+        return JsonResponse({'email_valid': True})
 
 class UsernameValidationView(View):
     def post(self, request):
@@ -26,7 +27,6 @@ class UsernameValidationView(View):
             return JsonResponse({'username_error': 'username contains non-alphanumeric characters'}, status=400)
         if User.objects.filter(username=username).exists():
             return JsonResponse({'username_error': 'Username already taken'}, status=409)
-
         return JsonResponse({'username_valid': True})
 
 class RegistrationView(View):
