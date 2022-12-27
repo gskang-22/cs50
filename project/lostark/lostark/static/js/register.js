@@ -32,7 +32,7 @@ usernameField.addEventListener('keyup', (event) => {
     console.log("test");
 
     const usernameVal = event.target.value;
-
+    usernameSuccessOutput.style.display = 'block';
     usernameSuccessOutput.textContent = `Checking ${usernameVal}`
 
     usernameField.classList.remove("is-invalid");
