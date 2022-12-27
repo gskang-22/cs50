@@ -9,8 +9,6 @@ usernameField.addEventListener('keyup', (event) => {
 
     usernameField.classList.remove("is-invalid");
     feedbackArea.style.display = 'none';
-    feedbackArea.innerHTML = `<p>${data.username_error}</p>`
-
 
     if (usernameVal.length > 0) {
         fetch("/authentication/validate-username", {
