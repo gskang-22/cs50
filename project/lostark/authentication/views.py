@@ -6,6 +6,16 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
+class EmailValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        email = data['email']
+
+        if not str(username).isalnum():
+            return JsonResponse({'username_error': 'username contains non-alphanumeric characters'}, status=400)
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({'username_error': 'username in use'}, status=409)
+
 class UsernameValidationView(View):
     def post(self, request):
         data = json.loads(request.body)
