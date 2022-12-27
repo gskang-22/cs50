@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <link href="{% static 'css/main.css' %}" rel="stylesheet">
 <div class="row">
     <div class="col-md-4"></div>
@@ -10,9 +11,8 @@
             <div class="card-body" style="background-color:grey;">
             <div class="card-title">
                 <h4>Register for a free account</h4>
-
+            </div>
                 <form action="{% url 'register' %}" method="post">
-
                     {% csrf_token %}
 
                     {% include 'partials/_messages.html' %}
@@ -45,7 +45,6 @@
             </div>
         </div>
     </div>
-</div>
       <div class="col md-4"></div>
 </div>
 
