@@ -9,11 +9,11 @@ usernameField.addEventListener('keyup', (event) => {
 
     if (usernameVal.length > 0) {
         fetch("/authentication/validate-username", {
-            body: {username: usernameVal },
+            body: {username: usernameVal},
             method: "POST",
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log("data", data);
+            console.log("data", data)
         });
-    });
+    };
