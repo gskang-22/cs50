@@ -9,11 +9,9 @@
     <div class="col-md-4">
         <div class="card mt-5">
             <div class="card-body" style="background-color:grey;">
-            <div class="card-title">
-                <h4>Register for a free account</h4>
-            </div>
-            <form action="{% url 'register' %}" method="post">
-                {% csrf_token %}
+                <div class="card-title"><h4>Register for a free account</h4></div>
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
 
                     {% include 'partials/_messages.html' %}
 
