@@ -6,8 +6,14 @@ usernameField.addEventListener('keyup', (event) => {
     const usernameVal = event.target.value;
     console.log('usernameVal', usernameVal)
 
-    fetch("/authentication/validate-username", {
-        
+
+    if (usernameVal.length > 0) {
+        fetch("/authentication/validate-username", {
+            body: {username: usernameVal },
+            method: "POST",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("data", data)
+        });
     });
-    .then(response)
-});
