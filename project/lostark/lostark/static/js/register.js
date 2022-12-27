@@ -43,9 +43,9 @@ emailField.addEventListener('keyup', (event) => {
                 emailField.classList.add("is-invalid");
                 emailFeedbackArea.style.display = 'block';
                 emailFeedbackArea.innerHTML = `<p>${data.email_error}</p>`
-            } else {
+            } else if (feedbackArea.style.display == 'block') {
                 submitBtn.removeAttribute('disabled');
-            }
+            };
         });
     }
 })
@@ -76,9 +76,9 @@ usernameField.addEventListener('keyup', (event) => {
                 usernameField.classList.add("is-invalid");
                 feedbackArea.style.display = 'block';
                 feedbackArea.innerHTML = `<p>${data.username_error}</p>`
-            } else {
+            } else if (emailFeedbackArea.style.display == 'block') {
                 submitBtn.removeAttribute('disabled');
-            }
+            };
         });
     }
 });
