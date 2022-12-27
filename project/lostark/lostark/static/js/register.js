@@ -6,6 +6,7 @@ const usernameSuccessOutput = document.querySelector(".usernameSuccessOutput");
 const emailSuccessOutput = document.querySelector(".emailSuccessOutput");
 const showPasswordToggle = document.querySelector(".showPasswordToggle");
 const passwordField = document.querySelector("#passwordField");
+const submitBtn = document.querySelector(".submit-btn");
 
 const handleToggleInput = (e) => {
     if (showPasswordToggle.textContent == 'SHOW') {

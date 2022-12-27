@@ -35,5 +35,8 @@ class RegistrationView(View):
         return render(request, 'authentication/register.html')
 
     def post(self, request):
-        messages.success(request, 'Success whatsapp')
+        # get user data
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
         return render(request, 'authentication/register.html')

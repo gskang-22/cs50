@@ -12,7 +12,7 @@
             <div class="card-title">
                 <h4>Register for a free account</h4>
             </div>
-            <form action="{% url 'register' %}" method="POST">
+            <form action="{% url 'register' %}" method="post">
                 {% csrf_token %}
 
                     {% include 'partials/_messages.html' %}
@@ -40,7 +40,7 @@
                     <small style="float:right;" class="float-right py-2 showPasswordToggle">SHOW</small>
                     </div>
 
-                    <input type="submit" value="Register" class="btn btn-block btn-primary" style="margin-top:20px;">
+                    <input type="submit" value="Register" class="btn btn-block btn-primary submit-btn" style="margin-top:20px;">
                 </form>
             </div>
         </div>
