@@ -8,6 +8,9 @@ const emailSuccessOutput = document.querySelector(".emailSuccessOutput");
 emailField.addEventListener('keyup', (event) => {
     const emailVal = event.target.value;
     emailSuccessOutput.style.display = 'block';
+    if (emailVal.length == 0) {
+        emailSuccessOutput.style.display = 'none';
+    };
     emailSuccessOutput.textContent = `Checking ${emailVal}`
 
     emailField.classList.remove("is-invalid");
@@ -28,9 +31,6 @@ emailField.addEventListener('keyup', (event) => {
             }
         });
     }
-    if (emailVal.length = 0) {
-        emailSuccessOutput.style.display = 'none';
-    }
 })
 
 
@@ -38,6 +38,9 @@ usernameField.addEventListener('keyup', (event) => {
 
     const usernameVal = event.target.value;
     usernameSuccessOutput.style.display = 'block';
+    if (usernameVal.length == 0) {
+        usernameSuccessOutput.style.display = 'none';
+    };
     usernameSuccessOutput.textContent = `Checking ${usernameVal}`
 
     usernameField.classList.remove("is-invalid");
@@ -57,9 +60,5 @@ usernameField.addEventListener('keyup', (event) => {
                 feedbackArea.innerHTML = `<p>${data.username_error}</p>`
             }
         });
-    }
-
-    if (usernameVal.length = 0) {
-        usernameSuccessOutput.style.display = 'none';
     }
 });
