@@ -20,7 +20,6 @@ emailField.addEventListener('keyup', (event) => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log("data", data);
             emailSuccessOutput.style.display = 'none';
             if (data.email_error) {
                 emailField.classList.add("is-invalid");
@@ -48,7 +47,6 @@ usernameField.addEventListener('keyup', (event) => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log("data", data);
             usernameSuccessOutput.style.display = 'none';
             if (data.username_error) {
                 usernameField.classList.add("is-invalid");
