@@ -1,5 +1,11 @@
 const usernameField = document.querySelector('#usernameField');
 const feedbackArea = document.querySelector(".invalid-feedback");
+const emailField = document.querySelector("#emailField";)
+
+emailField.addEventListener('keyup', (event) => {
+    
+})
+
 
 usernameField.addEventListener('keyup', (event) => {
     console.log("test");
