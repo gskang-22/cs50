@@ -10,7 +10,7 @@ emailField.addEventListener('keyup', (event) => {
     emailFeedbackArea.style.display = 'none';
 
     if (emailVal.length > 0) {
-        fetch("/authentication/validate_email", {
+        fetch("/authentication/validate-email", {
             body: JSON.stringify({email: emailVal}),
             method: "POST",
         })
