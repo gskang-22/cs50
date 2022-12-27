@@ -35,5 +35,5 @@ class RegistrationView(View):
         return render(request, 'authentication/register.html')
 
     def post(self, request):
-        message.success('Success whatsapp')
+        messages.success(request, 'Success whatsapp')
         return render(request, 'authentication/register.html')
