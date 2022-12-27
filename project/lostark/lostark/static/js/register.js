@@ -7,6 +7,10 @@ usernameField.addEventListener('keyup', (event) => {
     const usernameVal = event.target.value;
     console.log('usernameVal', usernameVal)
 
+    usernameField.classList.remove("is-invalid");
+    feedbackArea.style.display = 'none';
+    feedbackArea.innerHTML = `<p>${data.username_error}</p>`
+
 
     if (usernameVal.length > 0) {
         fetch("/authentication/validate-username", {
