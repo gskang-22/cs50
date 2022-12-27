@@ -1,4 +1,5 @@
 const usernameField = document.querySelector('#usernameField');
+const feedbackArea = document.querySelector(".invalid-feedback");
 
 usernameField.addEventListener('keyup', (event) => {
     console.log("test");
@@ -17,6 +18,7 @@ usernameField.addEventListener('keyup', (event) => {
             console.log("data", data);
             if (data.username_error) {
                 usernameField.classList.add("is-invalid");
+                feedbackArea.innerHTML = `<p>${data.username_error}</p>`
             }
         });
     }
