@@ -11,7 +11,7 @@ class UsernameValidationView(View):
         data = json.loads(request.body)
         username = data['username']
 
-        if str(username).isalnum():
+        if not str(username).isalnum():
             return JsonResponse({'username_error': 'username contains non-alphanumeric characters'}, status=400)
         if User.objects.filter(username=username).exists():
             return JsonResponse({'username_error': 'username in use'}, status=409)
