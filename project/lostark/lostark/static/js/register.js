@@ -9,7 +9,6 @@ usernameField.addEventListener('keyup', (event) => {
 
     if (usernameVal.length > 0) {
         fetch("/authentication/validate-username", {
-            // maybe can remove the JSON.stringify part??
             body: JSON.stringify({username: usernameVal}),
             method: "POST",
         })
