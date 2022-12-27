@@ -19,7 +19,7 @@ emailField.addEventListener('keyup', (event) => {
             console.log("data", data);
             if (data.email_error) {
                 emailField.classList.add("is-invalid");
-                feedbackArea.style.display = 'block';
+                emailFeedbackArea.style.display = 'block';
                 emailFeedbackArea.innerHTML = `<p>${data.email_error}</p>`
             }
         });
