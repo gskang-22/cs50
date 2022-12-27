@@ -18,6 +18,7 @@ usernameField.addEventListener('keyup', (event) => {
             console.log("data", data);
             if (data.username_error) {
                 usernameField.classList.add("is-invalid");
+                feedbackArea.style.display = 'block';
                 feedbackArea.innerHTML = `<p>${data.username_error}</p>`
             }
         });
