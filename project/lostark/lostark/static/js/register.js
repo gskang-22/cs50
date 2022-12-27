@@ -39,9 +39,12 @@ emailField.addEventListener('keyup', (event) => {
         .then((data) => {
             emailSuccessOutput.style.display = 'none';
             if (data.email_error) {
+                submitBtn.disabled = true;
                 emailField.classList.add("is-invalid");
                 emailFeedbackArea.style.display = 'block';
                 emailFeedbackArea.innerHTML = `<p>${data.email_error}</p>`
+            } else {
+                submitBtn.removeAttribute('disabled');
             }
         });
     }
@@ -69,9 +72,12 @@ usernameField.addEventListener('keyup', (event) => {
         .then((data) => {
             usernameSuccessOutput.style.display = 'none';
             if (data.username_error) {
+                submitBtn.disabled = true;
                 usernameField.classList.add("is-invalid");
                 feedbackArea.style.display = 'block';
                 feedbackArea.innerHTML = `<p>${data.username_error}</p>`
+            } else {
+                submitBtn.removeAttribute('disabled');
             }
         });
     }
