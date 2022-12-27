@@ -57,3 +57,7 @@
 .showPasswordToggle:hover {
   tranform: scale(1.2);
 }
+
+.testing {
+  color: green;
+}
