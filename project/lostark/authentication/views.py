@@ -53,7 +53,6 @@ class RegistrationView(View):
 
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
-                user.is_active=False
                 user.save()
 
                 messages.success(request, 'Account successfully created')
