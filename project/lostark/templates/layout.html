@@ -23,7 +23,11 @@
     <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Log out</a>
+
+        <form action="{% url 'logout' %}">
+          <input class="text text-capitalize" type="submit" value="Sign out">
+        </form>
+
       </div>
     </div>
   </header>
@@ -34,7 +38,6 @@
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
        {% block content %}
-
 
 
        {% endblock %}
