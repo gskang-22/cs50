@@ -24,3 +24,8 @@ def add_expense(request):
         if not amount:
             messages.error(request, 'Amount is required')
             return render(request, 'expenses/add_expenses.html', context)
+
+        description = request.POST['description']
+        if not description:
+            messages.error(request, 'Description is required')
+            return render(request, 'expenses/add_expenses.html', context)
