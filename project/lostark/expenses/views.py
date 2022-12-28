@@ -13,7 +13,7 @@ def index(request):
 def add_expense(request):
     categories = Category.objects.all()
     context = {
-            'categories': categories
+            'categories': categories,
             'values': request.POST
         }
     if request.method == "GET":
