@@ -17,10 +17,10 @@ def add_expense(request):
             'values': request.POST
         }
     if request.method == "GET":
-        return render(request, 'expenses/add_expense.html', context)
+        return render(request, 'expenses/add_expenses.html', context)
 
     if request.method == 'POST':
         amount = request.POST['amount']
         if not amount:
             messages.error(request, 'Amount is required')
-            return render(request, 'expenses/add_expense.html', context)
+            return render(request, 'expenses/add_expenses.html', context)
