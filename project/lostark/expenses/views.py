@@ -22,7 +22,7 @@ def add_expense(request):
     if request.method == 'POST':
         amount = request.POST['amount']
         description = request.POST['description']
-        date = request.POST['date']
+        date = request.POST['expense_date']
         category = request.POST['category']
 
         if not amount:
