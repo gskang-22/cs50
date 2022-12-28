@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from validate_email import validate_email
 from django.contrib import messages
-from django.core.mail import EmailMessage
+from django
 
 # Create your views here.
 
@@ -59,3 +59,13 @@ class RegistrationView(View):
                 return render(request, 'authentication/register.html')
 
         return render(request, 'authentication/register.html')
+
+class LoginView(View):
+    def get(self, request):
+        return render(request, 'authentication/login.html')
+
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+
+
