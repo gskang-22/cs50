@@ -55,15 +55,14 @@ class RegistrationView(View):
                 user.set_password(password)
                 user.is_active=False
                 user.save()
-                
+
+                email_subject = 'Activate your account'
+                email_body = ''
                 email = EmailMessage(
-                    'Hello',
-                    'Body goes here',
-                    'from@example.com',
-                    ['to1@example.com', 'to2@example.com'],
-                    ['bcc@example.com'],
-                    reply_to=['another@example.com'],
-                    headers={'Message-ID': 'foo'},
+                    email_subject,
+                    email_body,
+                    'noreply@semycolon.com',
+                    [email]
                 )
 
                 messages.success(request, 'Account successfully created')
