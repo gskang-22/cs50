@@ -49,7 +49,7 @@ class RegistrationView(View):
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
                 user.save()
-                messages.error(request, 'Account successfully created')
+                messages.success(request, 'Account successfully created')
                 return render(request, 'authentication/register.html')
 
         return render(request, 'authentication/register.html')
