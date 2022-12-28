@@ -12,8 +12,11 @@
         </ol>
     </nav>
 
-    <form action="{% url 'expenses' %}" method="post">
+    <form action="{% url 'add-expenses' %}" method="post">
+
         {% csrf_token %}
+        {% include 'partials/_messages.html' %}
+
         <div class="card-body">
 
             <div class="form-group mt-3">
