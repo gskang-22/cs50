@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
 from django.contrib import messages
@@ -21,11 +21,19 @@ def add_expense(request):
 
     if request.method == 'POST':
         amount = request.POST['amount']
+        description = request.POST['description']
+        date = request.POST['date']
+        category = request.POST['category']
+
         if not amount:
             messages.error(request, 'Amount is required')
             return render(request, 'expenses/add_expenses.html', context)
 
-        description = request.POST['description']
         if not description:
             messages.error(request, 'Description is required')
             return render(request, 'expenses/add_expenses.html', context)
+
+        Expense.objects.create(amount=amount, date=date, category=category, description=description)
+
+        messages.success(request, 'Expense saved successfully')
+        return redirect('expenses')
