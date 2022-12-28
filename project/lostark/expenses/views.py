@@ -14,6 +14,7 @@ def add_expense(request):
     categories = Category.objects.all()
     context = {
             'categories': categories
+            'values': request.POST
         }
     if request.method == "GET":
         return render(request, 'expenses/add_expense.html', context)
