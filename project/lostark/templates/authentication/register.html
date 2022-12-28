@@ -11,8 +11,9 @@
             <div class="card-body" style="background-color:grey;">
                 <div class="card-title"><h4>Register for a free account</h4></div>
                 <form action="{% url 'register' %}" method="post">
-                    {% include 'partials/_messages.html' %}
                     {% csrf_token %}
+
+                    {% include 'partials/_messages.html' %}
                     <div class="form-group" style="margin-top:5px; margin-bottom:5px;">
                         <input type="text" name="username" id="usernameField" placeholder="username" class="form-control form-control-sm">
                     </div>
