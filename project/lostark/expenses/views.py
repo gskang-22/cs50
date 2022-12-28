@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
+from django.contrib import messages
 
 # Create your views here.
 
@@ -15,3 +16,9 @@ def add_expense(request):
         'categories': categories
     }
     return render(request, 'expenses/add_expense.html', context)
+
+    if request.method == 'POST':
+        amount = request.POST['amount']
+        if not amount:
+            messages.error(request, 'Amount is required')
+            return render(request, 'expenses/add_expense.html', context)
