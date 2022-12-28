@@ -19,4 +19,4 @@ class Expense(models.Model):
         ordering: ['-date']
 
 class Category(models.Model):
-    name = models.CharField(max_Length = 255)
+    name = models.CharField(max_length = 255)
