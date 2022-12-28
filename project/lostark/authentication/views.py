@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from validate_email import validate_email
 from django.contrib import messages
-from django
+from django.contrib import auth
 
 # Create your views here.
 
@@ -68,4 +68,10 @@ class LoginView(View):
         username = request.POST['username']
         password = request.POST['password']
 
+    if username and password:
+        user = auth.authenticate(username=username, password=password)
 
+        if user:
+            auth.login(request, user)
+            messages.success(request, 'Welcome, ' + user.username + ' you are now logged in')
+            return redirect('expenses')
