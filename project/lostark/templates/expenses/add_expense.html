@@ -29,9 +29,11 @@
             <div class="form-group mt-3">
                 <label for="">Category</label>
                 <select class="form-control" name="category">
-                    <option>a</option>
-                    <option>a</option>
-                    <option>a</option>
+                    {% for category in categories %}
+
+                    <option name="category" value="{{category.name}}"></option>
+
+                    {% endfor %}
                 </select>
             </div>
 
