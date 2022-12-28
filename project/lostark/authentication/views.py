@@ -75,3 +75,9 @@ class LoginView(View):
             auth.login(request, user)
             messages.success(request, 'Welcome, ' + user.username + ' you are now logged in')
             return redirect('expenses')
+
+        messages.error(request, 'Invalid credentials,try again')
+        return render(request, 'authentication/login.html')
+
+    messages.error(request, 'Please fill all fields')
+    return render(request, 'authentication/login.html')
