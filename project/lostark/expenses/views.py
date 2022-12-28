@@ -11,11 +11,11 @@ def index(request):
     return render(request, '../templates/expenses/index.html')
 
 def add_expense(request):
-    if request.method == "GET":
-        categories = Category.objects.all()
-        context = {
+    categories = Category.objects.all()
+    context = {
             'categories': categories
         }
+    if request.method == "GET":
         return render(request, 'expenses/add_expense.html', context)
 
     if request.method == 'POST':
