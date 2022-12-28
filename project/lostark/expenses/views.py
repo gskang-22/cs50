@@ -8,7 +8,12 @@ from django.contrib import messages
 @login_required(login_url='/authentication/login')
 def index(request):
     categories = Category.objects.all()
-    return render(request, '../templates/expenses/index.html')
+    expenses = Expense.objects.filter(owner=request.user)
+
+    context = {
+        'expenses': expenses
+    }
+    return render(request, '../templates/expenses/index.html', context)
 
 def add_expense(request):
     categories = Category.objects.all()
@@ -33,7 +38,10 @@ def add_expense(request):
             messages.error(request, 'Description is required')
             return render(request, 'expenses/add_expenses.html', context)
 
-        Expense.objects.create(owner=request.user, amount=amount, date=date, category=category, description=description)
+        if not date:
+            Expense.objects.create(owner=request.user, amount=amount, category=category, description=description)
+        else:
+            Expense.objects.create(owner=request.user, amount=amount, date=date, category=category, description=description)
 
         messages.success(request, 'Expense saved successfully')
         return redirect('expenses')
