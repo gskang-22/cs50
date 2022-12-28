@@ -68,16 +68,16 @@ class LoginView(View):
         username = request.POST['username']
         password = request.POST['password']
 
-    if username and password:
-        user = auth.authenticate(username=username, password=password)
+        if username and password:
+            user = auth.authenticate(username=username, password=password)
 
-        if user:
-            auth.login(request, user)
-            messages.success(request, 'Welcome, ' + user.username + ' you are now logged in')
-            return redirect('expenses')
+            if user:
+                auth.login(request, user)
+                messages.success(request, 'Welcome, ' + user.username + ' you are now logged in')
+                return redirect('expenses')
 
-        messages.error(request, 'Invalid credentials,try again')
+            messages.error(request, 'Invalid credentials,try again')
+            return render(request, 'authentication/login.html')
+
+        messages.error(request, 'Please fill all fields')
         return render(request, 'authentication/login.html')
-
-    messages.error(request, 'Please fill all fields')
-    return render(request, 'authentication/login.html')
