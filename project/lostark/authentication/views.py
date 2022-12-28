@@ -57,13 +57,14 @@ class RegistrationView(View):
                 user.save()
 
                 email_subject = 'Activate your account'
-                email_body = ''
+                email_body = 'test body'
                 email = EmailMessage(
                     email_subject,
                     email_body,
                     'noreply@semycolon.com',
                     [email]
                 )
+                email.send(fail_silently=False)
 
                 messages.success(request, 'Account successfully created')
                 return render(request, 'authentication/register.html')
