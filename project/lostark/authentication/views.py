@@ -40,11 +40,15 @@ class RegistrationView(View):
         email = request.POST['email']
         password = request.POST['password']
 
+        context = {
+            'fieldValues': request.POST
+            }
+
         if not User.objects.filter(email=email).exists():
             if not User.objects.filter(username=username).exists():
                 if len(password) < 6:
                     messages.error(request, 'aPassword too short')
-                    return render(request, 'authentication/register.html')
+                    return render(request, 'authentication/register.html', context)
 
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
