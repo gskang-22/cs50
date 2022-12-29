@@ -32,6 +32,7 @@
             <div class="form-group mt-3">
                 <label for="">Category</label>
                 <select class="form-control" name="category">
+                    <option selected name="category" value="{{values.category}}">{{values.category}}</option>
                     {% for category in categories %}
 
                     <option name="category" value="{{category.name}}">{{category.name}}</option>
