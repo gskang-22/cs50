@@ -91,3 +91,14 @@ def delete_expense(request, id):
     expense.delete()
     messages.success(request, 'Expense deleted')
     return redirect('expenses')
+
+def search_expenses(request):
+    if request.method == 'POST':
+        search_str = json.loads(request.body).get('searchText')
+        expenses = Expense.objects.filter(
+            amount__istartswith=search_str, owner=request.user) | Expense.objects.filter(
+            date__istartswith=search_str, owner=request.user) | Expense.objects.filter(
+            description__icontains=search_str, owner=request.user) | Expense.objects.filter(
+            category__icontains=search_str, owner=request.user)
+        data = expenses.values()
+        return JsonResponse(list(data), safe=False)
