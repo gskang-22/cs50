@@ -23,9 +23,9 @@ def index(request):
 
 
 def add_income(request):
-    source = Source.objects.all()
+    sources = Source.objects.all()
     context = {
-            'source': source,
+            'sources': sources,
             'values': request.POST
         }
     if request.method == "GET":
