@@ -4,7 +4,9 @@ from .models import Income, Source
 # customize admin website
 class IncomeAdmin(admin.ModelAdmin):
     list_display = ('owner', 'amount', 'source', 'description', 'date')
-    search_fields = ('description', 'source', 'date',)
+    search_fields = ('description', 'source', 'date')
+
+    list_per_page = 5
 
 # Register your models here.
 
