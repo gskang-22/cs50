@@ -108,5 +108,5 @@ def search_expenses(request):
             category__icontains=search_str, owner=request.user)
 
         data = expenses.values()
-        # change to list as it is difficult to work with a query set
+        # change to list as it is difficult to work with a query set 
         return JsonResponse(list(data), safe=False)
