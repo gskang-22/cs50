@@ -19,6 +19,7 @@ def index(request):
     }
     return render(request, '../templates/expenses/index.html', context)
 
+
 def add_expense(request):
     categories = Category.objects.all()
     context = {
@@ -49,6 +50,7 @@ def add_expense(request):
 
         messages.success(request, 'Expense saved successfully')
         return redirect('expenses')
+
 
 def edit_expense(request, id):
     expense = Expense.objects.get(pk=id)
@@ -86,11 +88,13 @@ def edit_expense(request, id):
         messages.success(request, 'Expense updated successfully')
         return redirect('expenses')
 
+
 def delete_expense(request, id):
     expense = Expense.objects.get(pk=id)
     expense.delete()
     messages.success(request, 'Expense deleted')
     return redirect('expenses')
+
 
 def search_expenses(request):
     if request.method == 'POST':
