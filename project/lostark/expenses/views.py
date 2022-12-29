@@ -11,7 +11,7 @@ import json
 @login_required(login_url='/authentication/login')
 def index(request):
     expenses = Expense.objects.filter(owner=request.user)
-    paginator = Paginator(expenses, 2)
+    paginator = Paginator(expenses, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
