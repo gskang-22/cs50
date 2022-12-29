@@ -12,7 +12,7 @@ class Income(models.Model):
     source = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.category
+        return self.income
 
     # for sorting data according to date in descending order
     class Meta:
