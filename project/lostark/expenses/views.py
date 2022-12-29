@@ -10,11 +10,12 @@ from django.core.paginator import Paginator
 def index(request):
     expenses = Expense.objects.filter(owner=request.user)
     paginator = Paginator(expenses, 2)
-    page_number = request.GET('page')
-    page_obj = Paginator.get_page(page_number)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
 
     context = {
-        'expenses': expenses
+        'expenses': expenses,
+        'page_obj': page_obj
     }
     return render(request, '../templates/expenses/index.html', context)
 

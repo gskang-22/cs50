@@ -42,7 +42,7 @@
         </thead>
 
         <tbody>
-            {% for expense in expenses %}
+            {% for expense in page_obj %}
             <tr>
                 <td>{{expense.amount}}</td>
                 <td>{{expense.category}}</td>
@@ -53,6 +53,12 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <div class="">
+        Showing page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+    </div>
+
+
     {% endif %}
 </div>
 
