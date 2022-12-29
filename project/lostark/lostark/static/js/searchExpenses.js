@@ -6,8 +6,6 @@ const tableBody = document.querySelector('.table-body');
 const noResults = document.querySelector(".no-results");
 
 
-tableOutput.style.display = 'none';
-
 searchField.addEventListener('keyup', (e) =>{
     const searchValue = e.target.value;
 
