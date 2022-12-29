@@ -2,6 +2,7 @@ const searchField = document.querySelector('#searchField');
 const tableOutput = document.querySelector('.table-output');
 const appTable = document.querySelector('.app-table');
 const paginationContainer = document.querySelector('.pagination-container');
+const tableBody = document.querySelector('.table-body');
 
 
 tableOutput.style.display = 'none';
@@ -24,6 +25,16 @@ searchField.addEventListener('keyup', (e) =>{
 
             if (data.length == 0) {
                 tableOutput.innerHTML = "No results found";
+
+            } else {
+                data.foreach((item) => {
+                    tablebody.innerHTML += `
+                    <tr>
+                        <td>$</td>
+                        <td></td>
+                        <td></td>
+                    </tr>`
+                })
             }
         });
     } else {
