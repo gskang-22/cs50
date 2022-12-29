@@ -1,5 +1,6 @@
 const searchField = document.querySelector('#searchField');
 const tableOutput = document.querySelector('.table-output');
+const appTable = document.querySelector('.app-table');
 
 
 tableOutput.style.display = 'none';
@@ -14,6 +15,7 @@ searchField.addEventListener('keyup', (e) =>{
         })
         .then((res) => res.json())
         .then((data) => {
+            appTable.style.display = 'none';
 
             tableOutput.style.display = 'block';
 
