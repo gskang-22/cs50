@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -107,4 +108,5 @@ def search_expenses(request):
             category__icontains=search_str, owner=request.user)
 
         data = expenses.values()
+        # change to list as it is difficult to work with a query set
         return JsonResponse(list(data), safe=False)
