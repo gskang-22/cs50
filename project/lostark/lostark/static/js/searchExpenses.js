@@ -10,7 +10,6 @@ searchField.addEventListener('keyup', (e) =>{
     const searchValue = e.target.value;
 
     if (searchValue.trim().length > 0) {
-        paginationContainer.style.display = 'none';
 
         fetch("/search-expenses", {
             body: JSON.stringify({searchText: searchValue}),
@@ -20,6 +19,7 @@ searchField.addEventListener('keyup', (e) =>{
         .then((data) => {
 
             appTable.style.display = 'none';
+            paginationContainer.style.display = 'none';
             tableOutput.style.display = 'block';
 
             if (data.length == 0) {
@@ -27,6 +27,8 @@ searchField.addEventListener('keyup', (e) =>{
             }
         });
     } else {
-        appTable.style.display = 'none';
+        appTable.style.display = 'block';
+        paginationContainer.style.display = 'block';
+        tableOutput.style.display = 'none';
     }
 });
