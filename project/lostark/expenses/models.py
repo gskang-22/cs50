@@ -16,7 +16,7 @@ class Expense(models.Model):
 
     # for sorting data according to date in descending order
     class Meta:
-        ordering: ['-date']
+        ordering = ['-date']
 
 class Category(models.Model):
     name = models.CharField(max_length = 255)
