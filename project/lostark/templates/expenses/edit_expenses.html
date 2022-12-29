@@ -12,7 +12,7 @@
         </ol>
     </nav>
 
-    <form action="{% url 'add-expenses' %}" method="post">
+    <form action="{% url 'edit-expenses' %}" method="post">
 
         {% csrf_token %}
         {% include 'partials/_messages.html' %}
@@ -32,6 +32,7 @@
             <div class="form-group mt-3">
                 <label for="">Category</label>
                 <select class="form-control" name="category">
+                    <option selected name="category" value="{{values.category}}">{{values.category}}</option>
                     {% for category in categories %}
 
                     <option name="category" value="{{category.name}}">{{category.name}}</option>
