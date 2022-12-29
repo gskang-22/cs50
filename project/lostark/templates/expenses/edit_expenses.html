@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container mt-4" style="padding:3px">
-
+<div class="row">
     <div class="col-md-10">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -19,7 +19,8 @@
       <div class="col-md-2">
         <a href="{% url 'delete-expenses' expense.id %}" class="btn btn-danger btn-sm">Delete</a>
       </div>
-
+</div>
+    
     <form action="{% url 'edit-expenses' expense.id %}" method="post">
 
         {% csrf_token %}
