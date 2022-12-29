@@ -29,7 +29,7 @@ searchField.addEventListener('keyup', (e) =>{
 
             } else {
                 data.forEach((item) => {
-                    tablebody.innerHTML += `
+                    tableBody.innerHTML += `
                     <tr>
                         <td>${item.amount}</td>
                         <td>${item.category}</td>
