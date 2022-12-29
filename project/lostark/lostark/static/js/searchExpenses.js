@@ -1,0 +1,9 @@
+const searchField.querySelector('#searchField');
+
+searchField.addEventListener('keyup', (e) =>{
+    const searchValue = e.target.value;
+
+    if (searchValue.length > 0) {
+        console.log("asdf")
+    }
+})
