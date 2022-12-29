@@ -11,6 +11,7 @@ searchField.addEventListener('keyup', (e) =>{
     const searchValue = e.target.value;
 
     if (searchValue.trim().length > 0) {
+        tableBody.innerHTML = '';
 
         fetch("/search-expenses", {
             body: JSON.stringify({searchText: searchValue}),
