@@ -19,7 +19,7 @@ def index(request):
         'expenses': expenses,
         'page_obj': page_obj
     }
-    return render(request, '../templates/expenses/index.html', context)
+    return render(request, 'expenses/index.html', context)
 
 
 def add_expense(request):
