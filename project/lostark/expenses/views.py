@@ -47,12 +47,12 @@ def add_expense(request):
         return redirect('expenses')
 
 def edit_expense(request, id):
-    expenses = Expense.objects.get(pk=id)
+    expense = Expense.objects.get(pk=id)
     categories = Category.objects.all()
 
     context = {
-        'expenses': expenses,
-        'values': expenses,
+        'expense': expense,
+        'values': expense,
         'categories': categories
     }
     if request.method == 'GET':
