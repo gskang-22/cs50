@@ -4,7 +4,7 @@ searchField.addEventListener('keyup', (e) =>{
     const searchValue = e.target.value;
 
     if (searchValue.length > 0) {
-        fetch("/authentication/validate-email", {
+        fetch("/expenses/search-expenses", {
             body: JSON.stringify({email: emailVal}),
             method: "POST",
         })
