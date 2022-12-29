@@ -24,6 +24,8 @@ class Category(models.Model):
     # defining how this model should be called in plural form (ie categorys vs categories)
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ['name']
 
     def __str__(self):
         return self.name
+
