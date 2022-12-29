@@ -71,13 +71,13 @@ def edit_expense(request, id):
             messages.error(request, 'Description is required')
             return render(request, 'expenses/edit_expenses.html', context)
 
-        if not date:
-            Expense.objects.create(owner=request.user, amount=amount, category=category, description=description)
-        else:
-            Expense.objects.create(owner=request.user, amount=amount, date=date, category=category, description=description)
+        expense.owner = request.user
+        expense.amount = amount
+        expense.category = category
+        expense.description = description
+        if date:
+            expense.date = date
 
-        messages.success(request, 'Expense saved successfully')
+        expense.save()
+        messages.success(request, 'Expense updated successfully')
         return redirect('expenses')
-
-        message.info(request, 'Handling post form')
-        return render(request, 'expenses/edit_expenses.html', context)
