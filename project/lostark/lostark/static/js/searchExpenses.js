@@ -10,7 +10,7 @@ searchField.addEventListener('keyup', (e) =>{
     const searchValue = e.target.value;
 
     if (searchValue.trim().length > 0) {
-        pagination-container.style.display = 'none';
+        paginationContainer.style.display = 'none';
 
         fetch("/search-expenses", {
             body: JSON.stringify({searchText: searchValue}),
