@@ -18,13 +18,15 @@ searchField.addEventListener('keyup', (e) =>{
         })
         .then((res) => res.json())
         .then((data) => {
-            appTable.style.display = 'none';
 
+            appTable.style.display = 'none';
             tableOutput.style.display = 'block';
 
             if (data.length == 0) {
                 tableOutput.innerHTML = "No results found";
             }
         });
+    } else {
+        appTable.style.display = 'none';
     }
 });
