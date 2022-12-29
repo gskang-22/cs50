@@ -3,9 +3,13 @@
 
 {% block branding %}
 <h1 id="head">
-    <img src="{% static 'img/logo.jpg' %}" width="35" height="35">
+    <img src="{% static 'img/logo.jpg' %}" width="50" height="50">
 
-    LostArk
+    Lost Ark
 </h1>
+
+{% endblock %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/adminstyle.css %}">
 
 {% endblock %}
