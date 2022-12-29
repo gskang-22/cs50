@@ -53,7 +53,7 @@ def edit_expense(request, id):
         'values': expenses
     }
     if request.method == 'GET':
-        return render(request, 'expenses/edit_expenses.html')
+        return render(request, 'expenses/edit_expenses.html', context)
 
     else:
         message.info(request, 'Handling post form')
