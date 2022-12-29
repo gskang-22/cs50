@@ -46,7 +46,7 @@ def add_expense(request):
         messages.success(request, 'Expense saved successfully')
         return redirect('expenses')
 
-def expenses_edit(request, id):
+def edit_expenses(request, id):
     expenses = Expense.objects.get(pk=id)
     context = {
         'expenses': expenses,
