@@ -23,23 +23,22 @@
         </div>
 
     </div>
-</div>
 
-{% include 'partials/_messages.html' %}
+    <div class="container">
+        {% include 'partials/_messages.html' %}
+        {% if expenses.count %}
+        <div class="row">
+            <div class="col-md-8"></div>
 
-<div class="row">
-    <div class="col-md-8"></div>
-    <div class="col-md-4">
-
-      <div class="form-group">
-        <input type="text" class="form-control" id="searchField" placeholder="Search">
-      </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchField" placeholder="Search">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-<div class="container mt-3">
 
-    {% if expenses.count %}
 
     <div class="app-table">
         <table class="table table-stripped table-hover">
