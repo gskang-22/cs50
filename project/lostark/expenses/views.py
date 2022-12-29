@@ -48,9 +48,12 @@ def add_expense(request):
 
 def edit_expense(request, id):
     expenses = Expense.objects.get(pk=id)
+    categories = Category.objects.all()
+
     context = {
         'expenses': expenses,
-        'values': expenses
+        'values': expenses,
+        'categories': categories
     }
     if request.method == 'GET':
         return render(request, 'expenses/edit_expenses.html', context)
