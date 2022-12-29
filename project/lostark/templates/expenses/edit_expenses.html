@@ -12,7 +12,7 @@
         </ol>
     </nav>
 
-    <form action="{% url 'edit-expenses' %}" method="post">
+    <form action="{% url 'edit-expenses' expenses.id %}" method="post">
 
         {% csrf_token %}
         {% include 'partials/_messages.html' %}
