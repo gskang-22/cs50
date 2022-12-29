@@ -3,6 +3,7 @@ const tableOutput = document.querySelector('.table-output');
 const appTable = document.querySelector('.app-table');
 const paginationContainer = document.querySelector('.pagination-container');
 const tableBody = document.querySelector('.table-body');
+const noResults = document.querySelector(".no-results");
 
 
 tableOutput.style.display = 'none';
@@ -25,9 +26,11 @@ searchField.addEventListener('keyup', (e) =>{
             tableOutput.style.display = 'block';
 
             if (data.length == 0) {
-                tableOutput.innerHTML = "No results found";
+                noResults.style.display = "block";
+                tableOutput.style.display = "none";
 
             } else {
+                noResults.style.display = "none";
                 data.forEach((item) => {
                     tableBody.innerHTML += `
                     <tr>
