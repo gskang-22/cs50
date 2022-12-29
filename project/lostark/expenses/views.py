@@ -58,6 +58,26 @@ def edit_expense(request, id):
     if request.method == 'GET':
         return render(request, 'expenses/edit_expenses.html', context)
 
-    else:
+    if request.method == 'POST':
+        amount = request.POST['amount']
+        description = request.POST['description']
+        date = request.POST['expense_date']
+        category = request.POST['category']
+        if not amount:
+            messages.error(request, 'Amount is required')
+            return render(request, 'expenses/add_expenses.html', context)
+
+        if not description:
+            messages.error(request, 'Description is required')
+            return render(request, 'expenses/add_expenses.html', context)
+
+        if not date:
+            Expense.objects.create(owner=request.user, amount=amount, category=category, description=description)
+        else:
+            Expense.objects.create(owner=request.user, amount=amount, date=date, category=category, description=description)
+
+        messages.success(request, 'Expense saved successfully')
+        return redirect('expenses')
+
         message.info(request, 'Handling post form')
         return render(request, 'expenses/edit_expenses.html', context)
