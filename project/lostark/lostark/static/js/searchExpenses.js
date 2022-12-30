@@ -12,7 +12,7 @@ searchField.addEventListener('keyup', (e) =>{
     if (searchValue.trim().length > 0) {
         tableBody.innerHTML = '';
 
-        fetch("/search-expenses", {
+        fetch("search-expenses", {
             body: JSON.stringify({searchText: searchValue}),
             method: "POST",
         })
