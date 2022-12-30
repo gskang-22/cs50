@@ -42,7 +42,7 @@ const getChartData = () => {
     .then(results => {
         console.log("results", results);
         const expense_category_data = results.expense_category_data;
-        const[data, labels] = [Object.keys(category_data), Object]
+        const [data, labels] = [Object.keys(category_data), Object.values(category_data)]
 
         renderChart([], []);
     })
