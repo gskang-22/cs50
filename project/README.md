@@ -8,7 +8,6 @@ Using Django, this web application keeps track of your gold expenses and income 
 By tracking your incomes and expenses, as well as the where and when you spent/ earned your
 gold, you might be able to manage you gold more wisely. After all, gold is THE currency in Lost Ark.
 
-
 This app has a total of 3 apps: expenses, income, and authentication. Using a username, email, and password,
 you can register for an account. Then, you would be sent to the index expenses page along with a "login
 successful" message.
@@ -22,7 +21,7 @@ and finally source (for income) / categories (for expenses).
 
 You can also search for a transaction using the search bar at the top right that without needing a submit button.
 This search field searches through all 4 elements of expenses/ income and returns you the appropriate transaction
-records. If no transaction fits the seach requirements, 
+records. If no transaction fits the seach requirements, a "No results found" text will pop-up.
 
 Moreover, you can also view your transactions in the form of "doughnut" tables that helps you understand your
 spending and earning better visually.
