@@ -16,7 +16,9 @@ transactions. You are free to toggle between the different pages
 
 You are also able to create, edit and delete any transactions. The transactions have a total of 4 rows:
 amount (of gold), description (details about the transaction), date (of transaction) that is auto-filled
-with today's date, and finally source (for income)/ categories (for expenses).
+with today's date, and finally source (for income) / categories (for expenses).
+
+You can also search for a transaction using the search bar at the top right that without needing a submit button.
 
 Moreover, you can also view your transactions in the form of "doughnut" tables that helps you understand your
 spending and earning better visually.
