@@ -131,5 +131,8 @@ def expense_category_summary(request):
             amount += item.amount
         return amount
 
-    for y in category_list:
-        finalrep[y]
+    # makes dictionary of category:amount
+    for cat in category_list:
+        finalrep[cat] = get_expense_category_amount(cat)
+
+    return JsonResponse({'expense_category_data': finalrep}, safe=False)
