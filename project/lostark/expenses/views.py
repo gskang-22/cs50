@@ -113,6 +113,7 @@ def search_expenses(request):
         # change to list as it is difficult to work with a query set
         return JsonResponse(list(data), safe=False)
 
+
 def expense_category_summary(request):
     todays_date = datetime.date.today()
     six_months_ago = todays_date - datetime.timedelta(days = 30 * 6)

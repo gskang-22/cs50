@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 import json
+import datetime
 
 # Create your views here.
 
@@ -111,3 +112,33 @@ def search_income(request):
         data = income.values()
         # change to list as it is difficult to work with a query set
         return JsonResponse(list(data), safe=False)
+
+
+
+def income_source_summary(request):
+    todays_date = datetime.date.today()
+    six_months_ago = todays_date - datetime.timedelta(days = 30 * 6)
+    income = Income.objects.filter(owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
+    finalrep = {}
+
+    def get_source(income):
+        return income.source
+    # gets a unique list of categories the user used
+    source_list = list(set(map(get_source, income)))
+
+    def get_income_source_amount(source):
+        amount = 0
+        filtered_by_source = income.filter(source=source)
+
+        for item in filtered_by_source:
+            amount += item.amount
+        return amount
+
+    # makes dictionary of source:amount
+    for cat in source_list:
+        finalrep[cat] = get_income_source_amount(cat)
+
+    return JsonResponse({'income_source_data': finalrep}, safe=False)
+
+def stats_view(request):
+    return render(request, 'income/stats.html')
