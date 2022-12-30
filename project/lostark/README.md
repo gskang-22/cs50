@@ -10,16 +10,19 @@ gold, you might be able to manage you gold more wisely. After all, gold is THE c
 
 
 This app has a total of 3 apps: expenses, income, and authentication. Using a username, email, and password,
-you can register for an account. Then, you would be sent to the index expenses page.
+you can register for an account. Then, you would be sent to the index expenses page along with a "login
+successful" message.
 
 For both expenses and income, by using a paginator, clutter is reduced and you only see 3 rows of your
-transactions. You are free to toggle between the different pages
+transactions. You are free to toggle between the different pages, and also to the first and last page
 
-You are also able to create, edit and delete any transactions. The transactions have a total of 4 rows:
+You are also able to create, edit and delete any transactions. The transactions have a total of 4 elements:
 amount (of gold), description (details about the transaction), date (of transaction) that is auto-filled
 with today's date, and finally source (for income) / categories (for expenses).
 
 You can also search for a transaction using the search bar at the top right that without needing a submit button.
+This search field searches through all 4 elements of expenses/ income and returns you the appropriate transaction
+records.
 
 Moreover, you can also view your transactions in the form of "doughnut" tables that helps you understand your
 spending and earning better visually.
