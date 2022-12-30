@@ -16,19 +16,25 @@ the pages are made convenient and easy.
 
 Upon successful login, you would be sent to the index expenses page along with a "login successful" message.
 
-For both expenses and income, by using a paginator, clutter is reduced and you only see 3 rows of your
-transactions. You are free to toggle between the different pages, and also to the first and last page
+For both expenses and income, by using Django's paginator, clutter is reduced and you only see the first 3 rows of your
+transactions, which are sorted by date in descending order. You are free to toggle between the different pages, and also
+able to skip to the first and last pages.
 
 You are also able to create, edit and delete any transactions. The transactions have a total of 4 elements:
-amount (of gold), description (details about the transaction), date (of transaction) that is, by default, today's date,
-and finally source (for income) / categories (for expenses).
+amount (of gold), description (details about the transaction), date (of transaction), that is today's date by default,
+and finally source (for income) / categories (for expenses) that allows users to understand where their gold came from/
+"disappeared" to.
 
-You can also search for a transaction using the search bar at the top right without needing a submit button.
-This search field searches through all 4 elements of expenses/ income and returns you the appropriate transaction
+You can also search for a transaction using the search bar at the top right without the need for a submit button.
+This search field searches through all 4 elements of expenses/ income and returns the appropriate transaction
 records. If no transaction fits the search requirements, a "No results found" text will pop-up.
 
-Moreover, you can also view your transactions in the form of "doughnut" tables that helps you understand your
-spending and earning better visually.
+Moreover, you can also view your transactions in the form of "doughnut" graphs that helps you understand your
+spendings and earnings better visually.
+
+With a sidebar with links to the pages for expenses and income, as well as to the "doughnut" charts for visual display,
+users are able to easily move between the different app pages with a click of a button. The presence of "breadcrumbs" near
+the top of the page also helps add to the user's convenience.
 
 Overall, hope you find this app useful (and enjoy the "dark mode" design) :)
 
