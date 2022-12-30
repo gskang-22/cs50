@@ -45,9 +45,9 @@
                 <select class="form-control" name="source">
                     <option selected name="source" value="{{values.source}}">{{values.source}}</option>
                     {% for source in sources %}
-
-                    <option name="source" value="{{source.name}}">{{source.name}}</option>
-
+                        {% if source.name != values.source %}
+                            <option name="source" value="{{source.name}}">{{source.name}}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </div>
