@@ -62,7 +62,7 @@ def edit_income(request, id):
     context = {
         'income': income,
         'values': income,
-        'source': source
+        'sources': source
     }
     if request.method == 'GET':
         return render(request, 'income/edit_income.html', context)
