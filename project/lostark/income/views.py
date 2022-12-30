@@ -141,4 +141,4 @@ def income_source_summary(request):
     return JsonResponse({'income_source_data': finalrep}, safe=False)
 
 def stats_view(request):
-    return render(request, 'income/stats.html')
+    return render(request, 'income/stats_income.html')
