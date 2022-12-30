@@ -8,8 +8,7 @@ const showPasswordToggle = document.querySelector(".showPasswordToggle");
 const passwordField = document.querySelector("#passwordField");
 const submitBtn = document.querySelector(".submit-btn");
 
-
-showPasswordToggle.addEventListener("click", (e) => {
+const handleToggleInput = (e) => {
     if (showPasswordToggle.textContent == 'SHOW') {
         showPasswordToggle.textContent = 'HIDE';
         passwordField.setAttribute("type", "text");
@@ -17,7 +16,9 @@ showPasswordToggle.addEventListener("click", (e) => {
         showPasswordToggle.textContent = 'SHOW';
         passwordField.setAttribute("type", "password");
     }
-});
+};
+
+showPasswordToggle.addEventListener("click", handleToggleInput);
 
 emailField.addEventListener('keyup', (event) => {
     const emailVal = event.target.value;
