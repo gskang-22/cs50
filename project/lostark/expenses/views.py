@@ -111,3 +111,25 @@ def search_expenses(request):
         data = expenses.values()
         # change to list as it is difficult to work with a query set
         return JsonResponse(list(data), safe=False)
+
+def expense_category_summary(request):
+    todays_date = datetime.date.today()
+    six_months_ago = todays_date - datetime.timedelta(days = 30 * 6)
+    expenses = Expense.objects.filter(owner=request.user, date__gte=six_months_ago, date_lte=todays_date)
+    finalrep = {}
+
+    def get_category(expense):
+        return expense.category
+    # gets a unique list of categories the user used
+    category_list = list(set(map(get_category, expenses)))
+
+    def get_expense_category_amount(category):
+        amount = 0
+        filtered_by_category = expenses.filter(category=category)
+
+        for item in filtered_by_category:
+            amount += item.amount
+        return amount
+
+    for y in category_list:
+        finalrep[y]
