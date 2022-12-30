@@ -39,7 +39,7 @@ const renderChart = (data, labels) => {
     });
 }
 const getChartData = () => {
-    fetch('income/income-source-summary')
+    fetch('/income/income-source-summary')
     .then(res=>res.json())
     .then(results => {
         console.log("results", results);
