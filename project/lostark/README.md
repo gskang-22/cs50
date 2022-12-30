@@ -1,5 +1,5 @@
 # LOST ARK gold tracker
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/m5vTIA3Jlx8
 #### Description:
 Decided to make this after seeing my gold magically disappear for the past 6 months...
 
