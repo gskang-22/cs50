@@ -143,4 +143,4 @@ def expense_category_summary(request):
     return JsonResponse({'expense_category_data': finalrep}, safe=False)
 
 def stats_view(request):
-    return render(request, 'expenses/stats_expenses.html')
+    return render(request, 'expenses/stats_expenses.html', {'username': request.user})

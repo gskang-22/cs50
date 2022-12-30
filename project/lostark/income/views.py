@@ -18,7 +18,8 @@ def index(request):
 
     context = {
         'income': income,
-        'page_obj': page_obj
+        'page_obj': page_obj,
+        'username': request.user
     }
     return render(request, 'income/index.html', context)
 
@@ -27,7 +28,8 @@ def add_income(request):
     sources = Source.objects.all()
     context = {
             'sources': sources,
-            'values': request.POST
+            'values': request.POST,
+            'username': request.user
         }
     if request.method == "GET":
         return render(request, 'income/add_income.html', context)
@@ -62,7 +64,8 @@ def edit_income(request, id):
     context = {
         'income': income,
         'values': income,
-        'sources': source
+        'sources': source,
+        'username': request.user
     }
     if request.method == 'GET':
         return render(request, 'income/edit_income.html', context)
@@ -141,4 +144,4 @@ def income_source_summary(request):
     return JsonResponse({'income_source_data': finalrep}, safe=False)
 
 def stats_view(request):
-    return render(request, 'income/stats_income.html')
+    return render(request, 'income/stats_income.html', {'username': request.user})
