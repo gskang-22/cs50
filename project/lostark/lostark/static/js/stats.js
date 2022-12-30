@@ -14,6 +14,7 @@
         title: {
             display: true,
             text: 'Expenses per category',
+            backgroundColor
         }
       }
     }
