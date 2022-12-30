@@ -18,7 +18,8 @@ def index(request):
 
     context = {
         'expenses': expenses,
-        'page_obj': page_obj
+        'page_obj': page_obj,
+        'username': request.user
     }
     return render(request, '../templates/expenses/index.html', context)
 
@@ -27,7 +28,8 @@ def add_expense(request):
     categories = Category.objects.all()
     context = {
             'categories': categories,
-            'values': request.POST
+            'values': request.POST,
+            'username': request.user
         }
     if request.method == "GET":
         return render(request, 'expenses/add_expenses.html', context)
@@ -62,7 +64,8 @@ def edit_expense(request, id):
     context = {
         'expense': expense,
         'values': expense,
-        'categories': categories
+        'categories': categories,
+        'username': request.user
     }
     if request.method == 'GET':
         return render(request, 'expenses/edit_expenses.html', context)
