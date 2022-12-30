@@ -1,4 +1,6 @@
-from 'chart.js' import { Colors };
+import { Colors } from 'chart.js';
+
+Chart.register(Colors);
 
 
 const ctx = document.getElementById('myChart');
@@ -22,4 +24,3 @@ options: {
     }
     }
 });
-Chart.register(Colors);
