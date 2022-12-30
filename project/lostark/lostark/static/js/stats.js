@@ -41,6 +41,8 @@ const getChartData = () => {
     .then(res=>res.json())
     .then(results => {
         console.log("results", results);
+        const expense_category_data = results.expense_category_data;
+        const[data, labels] = [Object.keys(category_data), Object]
 
         renderChart([], []);
     })
