@@ -36,7 +36,7 @@ const renderChart = (data, labels) => {
         }
     });
 }
-const getChartData() => {
+const getChartData = () => {
     fetch('expense-category-summary')
     .then(res=>res.json)
     .then(results => {
