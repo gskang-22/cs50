@@ -1,4 +1,4 @@
-from 'chart.js' { Colors } from 'chart.js';
+from 'chart.js' import { Colors };
 Chart.register(Colors);;
 
 const ctx = document.getElementById('myChart');
