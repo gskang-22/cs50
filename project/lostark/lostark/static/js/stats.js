@@ -38,9 +38,9 @@ const renderChart = (data, labels) => {
 }
 const getChartData = () => {
     fetch('expense-category-summary')
-    .then(res=>res.json)
+    .then(res=>res.json())
     .then(results => {
-        console.log("results, results");
+        console.log("results", results);
 
         renderChart([], []);
     })
