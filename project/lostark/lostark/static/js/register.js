@@ -5,6 +5,7 @@ const emailFeedbackArea = document.querySelector(".emailFeedbackArea");
 const usernameSuccessOutput = document.querySelector(".usernameSuccessOutput");
 const emailSuccessOutput = document.querySelector(".emailSuccessOutput");
 const showPasswordToggle = document.querySelector(".showPasswordToggle");
+console.log(showPasswordToggle);
 const passwordField = document.querySelector("#passwordField");
 const submitBtn = document.querySelector(".submit-btn");
 
