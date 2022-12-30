@@ -12,5 +12,5 @@ class ExpenseAdmin(admin.ModelAdmin):
 
 # Register your models here.
 
-admin.site.register(Expense, ExpenseAdmin)
+admin.site.register(Expense, ExpenseAdmi)
 admin.site.register(Category)
