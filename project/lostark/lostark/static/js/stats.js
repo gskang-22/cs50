@@ -1,5 +1,5 @@
 from 'chart.js' import { Colors };
-Chart.register(Colors);;
+
 
 const ctx = document.getElementById('myChart');
 
@@ -21,5 +21,5 @@ options: {
         backgroundColor
     }
     }
-}
-);
+});
+Chart.register(Colors);
