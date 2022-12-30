@@ -47,4 +47,4 @@ const getChartData = () => {
 }
 
 
-document.onload = getChartData;
+document.onload = getChartData();
