@@ -17,12 +17,12 @@ For both expenses and income, by using a paginator, clutter is reduced and you o
 transactions. You are free to toggle between the different pages, and also to the first and last page
 
 You are also able to create, edit and delete any transactions. The transactions have a total of 4 elements:
-amount (of gold), description (details about the transaction), date (of transaction) that is auto-filled
-with today's date, and finally source (for income) / categories (for expenses).
+amount (of gold), description (details about the transaction), date (of transaction) that is, by default, today's date,
+and finally source (for income) / categories (for expenses).
 
 You can also search for a transaction using the search bar at the top right that without needing a submit button.
 This search field searches through all 4 elements of expenses/ income and returns you the appropriate transaction
-records.
+records. If no transaction fits the seach requirements, 
 
 Moreover, you can also view your transactions in the form of "doughnut" tables that helps you understand your
 spending and earning better visually.
