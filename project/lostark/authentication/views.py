@@ -94,7 +94,11 @@ class RequestPasswordResetEmail(View):
 
     def post(self, request):
         email = request.POST['email']
+        context = {
+            'values': request.POST
+        }
 
         if not validate_email(email):
             messages.error(request, 'Please enter a valid email')
-        return render(request, 'authentication/reset-password.html')
+            return render(request, 'authentication/reset-password.html', context)
+
