@@ -37,7 +37,13 @@ const renderChart = (data, labels) => {
     });
 }
 const getChartData() => {
-    fetch('')
+    fetch('expense-category-summary')
+    .then(res=>res.json)
+    .then(results => {
+        console.log("results, results");
+
+        renderChart()
+    })
 }
 
 
