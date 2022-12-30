@@ -42,9 +42,9 @@ const getChartData() => {
     .then(results => {
         console.log("results, results");
 
-        renderChart()
+        renderChart([], []);
     })
 }
 
 
-document.onload = getChartData
+document.onload = getChartData;
