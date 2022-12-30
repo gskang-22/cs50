@@ -18,7 +18,7 @@ const handleToggleInput = (e) => {
     }
 };
 
-showPasswordToggle.addEventListener("click", handleToggleInput);
+showPasswordToggle.addEventListener('click', handleToggleInput);
 
 emailField.addEventListener('keyup', (event) => {
     const emailVal = event.target.value;
