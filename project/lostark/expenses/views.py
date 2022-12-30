@@ -136,3 +136,6 @@ def expense_category_summary(request):
         finalrep[cat] = get_expense_category_amount(cat)
 
     return JsonResponse({'expense_category_data': finalrep}, safe=False)
+
+def stats_view(request):
+    return render(request, 'expenses/stats.html')
