@@ -1,22 +1,25 @@
-  const ctx = document.getElementById('myChart');
+from 'chart.js' { Colors } from 'chart.js';
+Chart.register(Colors);;
 
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-        
-      }]
-    },
-    options: {
-        title: {
-            display: true,
-            text: 'Expenses per category',
-            backgroundColor
-        }
-      }
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+type: 'pie',
+data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+    label: '# of Votes',
+    data: [12, 19, 3, 5, 2, 3],
+    borderWidth: 1,
+
+    }]
+},
+options: {
+    title: {
+        display: true,
+        text: 'Expenses per category',
+        backgroundColor
     }
-  );
+    }
+}
+);
