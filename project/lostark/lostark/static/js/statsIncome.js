@@ -39,11 +39,11 @@ const renderChart = (data, labels) => {
     });
 }
 const getChartData = () => {
-    fetch('income-category-summary')
+    fetch('income/income-source-summary')
     .then(res=>res.json())
     .then(results => {
         console.log("results", results);
-        const income_category_data = results.income_source_data;
+        const income_source_data = results.income_source_data;
         const [labels, data] = [Object.keys(income_source_data), Object.values(income_source_data)]
 
         renderChart(data, labels);
