@@ -1,7 +1,7 @@
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
@@ -11,10 +11,10 @@
       }]
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
+        title: {
+            display: true,
+            text: 'Expenses per category',
         }
       }
     }
-  });
+  );
