@@ -30,7 +30,8 @@ This search field searches through all 4 elements of expenses/ income and return
 records. If no transaction fits the search requirements, a "No results found" text will pop-up.
 
 Moreover, you can also view your transactions in the form of "doughnut" graphs that helps you understand your
-spendings and earnings better visually.
+spendings and earnings better visually. These graphs group your expenses/income according to their categories/ sources. 
+With differing colors and a black background, the graphs made easier to understand.
 
 With a sidebar with links to the pages for expenses and income, as well as to the "doughnut" charts for visual display,
 users are able to easily move between the different app pages with a click of a button. The presence of "breadcrumbs" near
