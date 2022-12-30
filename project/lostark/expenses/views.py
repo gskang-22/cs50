@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 import json
+from datetime import datetime
 
 # Create your views here.
 
@@ -113,7 +114,7 @@ def search_expenses(request):
         return JsonResponse(list(data), safe=False)
 
 def expense_category_summary(request):
-    todays_date = datetime.date.today()
+    todays_date = datetime.date.now()
     six_months_ago = todays_date - datetime.timedelta(days = 30 * 6)
     expenses = Expense.objects.filter(owner=request.user, date__gte=six_months_ago, date_lte=todays_date)
     finalrep = {}
